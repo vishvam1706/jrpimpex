@@ -1,0 +1,247 @@
+{
+  "categories": [
+    {
+      "id": "nuts",
+      "title": "Nuts",
+      "slug": "nuts",
+      "image": "/images/product-nuts.jpg",
+      "description": "Premium quality nuts sourced from the finest farms"
+    },
+    {
+      "id": "spices",
+      "title": "Spices",
+      "slug": "spices",
+      "image": "/images/product-spices.jpg",
+      "description": "Authentic Indian spices with rich aroma and flavor"
+    },
+    {
+      "id": "herbs",
+      "title": "Herbs",
+      "slug": "herbs",
+      "image": "/images/product-herbs.jpg",
+      "description": "Fresh and aromatic herbs for culinary excellence"
+    },
+    {
+      "id": "grains",
+      "title": "Grains",
+      "slug": "grains",
+      "image": "/images/product-grains.jpg",
+      "description": "High-quality grains and pulses"
+    }
+  ],
+  "products": [
+    {
+      "id": "raw-peanuts",
+      "title": "Raw Peanuts",
+      "category": "nuts",
+      "slug": "raw-peanuts",
+      "image": "/images/raw-peanuts.jpg",
+      "gallery": [
+        "/images/raw-peanuts-1.jpg",
+        "/images/raw-peanuts-2.jpg",
+        "/images/raw-peanuts-3.jpg"
+      ],
+      "description": "Welcome to JRP Impex, your trusted partner for premium quality raw peanuts in India. As the leading manufacturer, supplier, and exporter, we pride ourselves on delivering only the finest grade peanuts to our clients worldwide. Our raw peanuts are carefully sourced from the best farms in India, ensuring they meet international quality standards.",
+      "translations": {
+        "arabic": "الفول السوداني الخام",
+        "portuguese": "Amendoim Cru",
+        "dutch": "Rauwe Pinda's",
+        "spanish": "Maní crudo"
+      },
+      "specifications": [
+        "Moisture: Max 7%",
+        "Admixture: Max 1%",
+        "Oil Content: 48-50%",
+        "Aflatoxin: Below EU Standards"
+      ],
+      "packaging": "25kg/50kg PP Bags",
+      "origin": "India"
+    },
+    {
+      "id": "blanched-peanuts",
+      "title": "Blanched Peanuts",
+      "category": "nuts",
+      "slug": "blanched-peanuts",
+      "image": "/images/blanched-peanuts.jpg",
+      "gallery": ["/images/blanched-peanuts-1.jpg"],
+      "description": "High quality blanched peanuts with skin removed, perfect for snacks and confectionery.",
+      "translations": {
+        "arabic": "الفول السوداني المقشر",
+        "portuguese": "Amendoim Branqueado",
+        "dutch": "Geblancheerde Pinda's",
+        "spanish": "Maní Blanqueado"
+      },
+      "specifications": [
+        "Moisture: Max 6%",
+        "Splits: Max 5%",
+        "Color: White/Cream"
+      ],
+      "packaging": "25kg Vacuum Bags",
+      "origin": "India"
+    },
+    {
+      "id": "peanut-in-shell",
+      "title": "Peanut In Shell",
+      "category": "nuts",
+      "slug": "peanut-in-shell",
+      "image": "/images/peanut-shell.jpg",
+      "gallery": ["/images/peanut-shell-1.jpg"],
+      "description": "Natural peanuts in shell, ideal for roasting and direct consumption.",
+      "translations": {
+        "arabic": "الفول السوداني في القشرة",
+        "portuguese": "Amendoim com Casca",
+        "dutch": "Pinda's in de Schil",
+        "spanish": "Maní con Cáscara"
+      },
+      "specifications": [
+        "Moisture: Max 8%",
+        "Shell: Clean & Intact",
+        "Kernel Ratio: 70-75%"
+      ],
+      "packaging": "30kg Mesh Bags",
+      "origin": "India"
+    },
+    {
+      "id": "turmeric-powder",
+      "title": "Turmeric Powder",
+      "category": "spices",
+      "slug": "turmeric-powder",
+      "image": "/images/turmeric.jpg",
+      "gallery": ["/images/turmeric-1.jpg"],
+      "description": "Pure turmeric powder with high curcumin content and vibrant color.",
+      "translations": {
+        "arabic": "مسحوق الكركم",
+        "portuguese": "Açafrão em Pó",
+        "dutch": "Kurkuma Poeder",
+        "spanish": "Cúrcuma en Polvo"
+      },
+      "specifications": [
+        "Curcumin: 3-5%",
+        "Moisture: Max 10%",
+        "Color: Bright Yellow"
+      ],
+      "packaging": "25kg Paper Bags",
+      "origin": "India"
+    },
+    {
+      "id": "red-chili",
+      "title": "Red Chili",
+      "category": "spices",
+      "slug": "red-chili",
+      "image": "/images/red-chili.jpg",
+      "gallery": ["/images/red-chili-1.jpg"],
+      "description": "Premium quality red chili with excellent heat and color.",
+      "translations": {
+        "arabic": "الفلفل الأحمر",
+        "portuguese": "Pimenta Vermelha",
+        "dutch": "Rode Chili",
+        "spanish": "Chile Rojo"
+      },
+      "specifications": [
+        "Heat: 30000-50000 SHU",
+        "Moisture: Max 12%",
+        "Color: Deep Red"
+      ],
+      "packaging": "20kg Cartons",
+      "origin": "India"
+    },
+    {
+      "id": "cumin-seeds",
+      "title": "Cumin Seeds",
+      "category": "spices",
+      "slug": "cumin-seeds",
+      "image": "/images/cumin.jpg",
+      "gallery": ["/images/cumin-1.jpg"],
+      "description": "Aromatic cumin seeds with rich flavor and aroma.",
+      "translations": {
+        "arabic": "بذور الكمون",
+        "portuguese": "Sementes de Cominho",
+        "dutch": "Komijnzaad",
+        "spanish": "Semillas de Comino"
+      },
+      "specifications": [
+        "Purity: 99%",
+        "Moisture: Max 10%",
+        "Oil Content: 2.5-4%"
+      ],
+      "packaging": "25kg PP Bags",
+      "origin": "India"
+    },
+    {
+      "id": "moringa-powder",
+      "title": "Moringa Powder",
+      "category": "herbs",
+      "slug": "moringa-powder",
+      "image": "/images/moringa.jpg",
+      "gallery": ["/images/moringa-1.jpg"],
+      "description": "Organic moringa powder rich in nutrients and antioxidants.",
+      "translations": {
+        "arabic": "مسحوق المورينجا",
+        "portuguese": "Pó de Moringa",
+        "dutch": "Moringa Poeder",
+        "spanish": "Polvo de Moringa"
+      },
+      "specifications": ["Protein: 25-30%", "Moisture: Max 8%", "Color: Green"],
+      "packaging": "25kg Paper Bags",
+      "origin": "India"
+    },
+    {
+      "id": "basil-leaves",
+      "title": "Basil Leaves",
+      "category": "herbs",
+      "slug": "basil-leaves",
+      "image": "/images/basil.jpg",
+      "gallery": ["/images/basil-1.jpg"],
+      "description": "Dried basil leaves with fresh aroma and flavor.",
+      "translations": {
+        "arabic": "أوراق الريحان",
+        "portuguese": "Folhas de Manjericão",
+        "dutch": "Basilicumbladeren",
+        "spanish": "Hojas de Albahaca"
+      },
+      "specifications": ["Moisture: Max 10%", "Purity: 99%", "Color: Green"],
+      "packaging": "10kg Cartons",
+      "origin": "India"
+    },
+    {
+      "id": "basmati-rice",
+      "title": "Basmati Rice",
+      "category": "grains",
+      "slug": "basmati-rice",
+      "image": "/images/basmati.jpg",
+      "gallery": ["/images/basmati-1.jpg"],
+      "description": "Premium aged basmati rice with extra long grains.",
+      "translations": {
+        "arabic": "أرز بسمتي",
+        "portuguese": "Arroz Basmati",
+        "dutch": "Basmati Rijst",
+        "spanish": "Arroz Basmati"
+      },
+      "specifications": [
+        "Grain Length: 8.3mm",
+        "Moisture: Max 12%",
+        "Broken: Max 2%"
+      ],
+      "packaging": "25kg/50kg PP Bags",
+      "origin": "India"
+    },
+    {
+      "id": "chickpeas",
+      "title": "Chickpeas",
+      "category": "grains",
+      "slug": "chickpeas",
+      "image": "/images/chickpeas.jpg",
+      "gallery": ["/images/chickpeas-1.jpg"],
+      "description": "High protein chickpeas, perfect for various cuisines.",
+      "translations": {
+        "arabic": "الحمص",
+        "portuguese": "Grão de Bico",
+        "dutch": "Kikkererwten",
+        "spanish": "Garbanzos"
+      },
+      "specifications": ["Protein: 20-22%", "Moisture: Max 12%", "Purity: 99%"],
+      "packaging": "50kg PP Bags",
+      "origin": "India"
+    }
+  ]
+}

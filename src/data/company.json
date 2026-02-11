@@ -1,0 +1,34 @@
+{
+  "name": "JRP Impex",
+  "tagline": "We are | A service company",
+  "description": "JRP Impex, we are dedicated to providing top-quality agricultural products to our global clientele. With a commitment to excellence and customer satisfaction, we have established ourselves as a trusted name in the industry.",
+  "contact": {
+    "phone": "+91 99043 88999",
+    "email": "exports@jrpimpex.com",
+    "address": "502, RK Prime-2, 150 FT Ring Road, Opp. Balaji Hall, Rajkot, Gujarat-360007, INDIA"
+  },
+  "social": {
+    "facebook": "#",
+    "instagram": "#",
+    "twitter": "#",
+    "linkedin": "#",
+    "youtube": "#"
+  },
+  "stats": {
+    "experience": "10+",
+    "clients": "4000+",
+    "countries": "25+",
+    "products": "100+"
+  },
+  "about": {
+    "mission": "To deliver premium agricultural products that meet the highest international standards while maintaining sustainability and reliability in every shipment.",
+    "vision": "To become the most trusted global partner in agricultural trade, known for quality, integrity, and customer satisfaction.",
+    "values": [
+      "Quality Excellence",
+      "Customer Satisfaction",
+      "Sustainability",
+      "Integrity",
+      "Innovation"
+    ]
+  }
+}
