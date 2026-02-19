@@ -1,21 +1,13 @@
+import Image from "next/image";
+
 const steps = [
   {
     number: "01",
     title: "Sourcing & Selection",
     desc: "Handpicked from trusted farms meeting our rigorous origin standards.",
     icon: (
-      <svg
-        className="w-5 h-5"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"
-        />
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" />
       </svg>
     ),
   },
@@ -24,18 +16,8 @@ const steps = [
     title: "Quality Assurance",
     desc: "Every batch tested and certified to international food safety benchmarks.",
     icon: (
-      <svg
-        className="w-5 h-5"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-        />
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
       </svg>
     ),
   },
@@ -44,18 +26,8 @@ const steps = [
     title: "Sustainable Packaging",
     desc: "Eco-conscious materials that preserve freshness across long-haul transit.",
     icon: (
-      <svg
-        className="w-5 h-5"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
-        />
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
       </svg>
     ),
   },
@@ -64,18 +36,8 @@ const steps = [
     title: "Delivery & Support",
     desc: "On-time global shipments backed by dedicated post-delivery support.",
     icon: (
-      <svg
-        className="w-5 h-5"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"
-        />
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0" />
       </svg>
     ),
   },
@@ -88,8 +50,7 @@ export default function WorkProcess() {
       <div
         className="absolute inset-0 opacity-[0.06] pointer-events-none"
         style={{
-          backgroundImage:
-            "radial-gradient(circle, white 1px, transparent 1px)",
+          backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)",
           backgroundSize: "32px 32px",
         }}
       />
@@ -103,6 +64,7 @@ export default function WorkProcess() {
 
       <div className="container-custom relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 xl:gap-20 items-center">
+
           {/* ── Left — Text ─────────────────────────────── */}
           <div className="text-white">
             {/* Eyebrow */}
@@ -116,9 +78,7 @@ export default function WorkProcess() {
             <h2 className="font-[var(--font-heading)] font-bold text-white text-3xl md:text-4xl lg:text-5xl leading-[1.15] tracking-tight mb-5">
               Our Seamless Workflow:
               <br />
-              <span className="text-[var(--color-accent-gold)]">
-                From Source
-              </span>{" "}
+              <span className="text-[var(--color-accent-gold)]">From Source</span>{" "}
               to Shipment
             </h2>
 
@@ -131,7 +91,7 @@ export default function WorkProcess() {
               efficient packaging, and timely delivery.
             </p>
 
-            {/* Connecting line visual */}
+            {/* Step dots connector */}
             <div className="hidden lg:flex items-center gap-3">
               {steps.map((step, i) => (
                 <div key={i} className="flex items-center gap-3">
@@ -153,16 +113,28 @@ export default function WorkProcess() {
             {steps.map((step, index) => (
               <div
                 key={index}
-                className="group relative bg-white/8 backdrop-blur-sm border border-white/15 rounded-sm p-6 hover:bg-white/15 hover:border-[var(--color-accent-gold)]/40 hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+                className="group relative bg-white/8 backdrop-blur-sm border border-white/15 rounded-sm p-6 pt-10 hover:bg-white/15 hover:border-[var(--color-accent-gold)]/40 hover:-translate-y-1 transition-all duration-300 overflow-visible"
               >
                 {/* Hover gold top rule */}
                 <div className="absolute top-0 left-0 right-0 h-[2px] bg-[var(--color-accent-gold)] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300" />
 
-                {/* Number badge */}
-                <div className="w-12 h-12 rounded-sm bg-[var(--color-accent-gold)] flex items-center justify-center mb-4 shadow-[var(--shadow-gold)] group-hover:scale-105 transition-transform duration-200">
-                  <span className="text-[var(--color-primary-dark)] text-base font-black font-[var(--font-heading)] leading-none">
-                    {step.number}
-                  </span>
+                {/* ── Step shape badge — top left ── */}
+                <div className="absolute top-0 right-0 w-16 h-16 group-hover:scale-105 transition-transform duration-200">
+                  {/* step-shape.png as background */}
+                  <div className="relative w-full h-full">
+                    <Image
+                      src="/step-shape.png"
+                      alt={`Step ${step.number}`}
+                      fill
+                      className="object-contain"
+                    />
+                    {/* Number centered on top of shape */}
+                    <div className="absolute inset-0 flex items-center justify-center pb-1">
+                      <span className="text-[var(--color-primary-dark)] text-sm font-black font-[var(--font-heading)] leading-none drop-shadow-sm">
+                        {step.number}
+                      </span>
+                    </div>
+                  </div>
                 </div>
 
                 <h3 className="font-[var(--font-heading)] font-bold text-white text-base mb-2 leading-snug">
@@ -183,20 +155,16 @@ export default function WorkProcess() {
         </div>
       </div>
 
-      {/* ── Bottom wave into next section ───────────────── */}
+      {/* ── Bottom green-area.png ────────────────────────── */}
       <div className="absolute bottom-0 left-0 right-0 pointer-events-none z-10">
-        <svg
-          viewBox="0 0 1440 48"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-full"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M0 48 L0 24 Q360 0 720 24 Q1080 48 1440 24 L1440 48 Z"
-            fill="white"
+        <div className="relative w-full h-24 md:h-32">
+          <Image
+            src="/green-area.png"
+            alt="Green area decoration"
+            fill
+            className="object-cover object-top"
           />
-        </svg>
+        </div>
       </div>
     </section>
   );

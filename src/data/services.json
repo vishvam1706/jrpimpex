@@ -2,10 +2,10 @@
   "services": [
     {
       "id": "global-sourcing",
-      "icon": "/icons/sourcing.svg",
+      "icon": "/desert.svg",
       "title": "Global Sourcing",
       "description": "JRP Impex specializes in identifying high-quality food and agricultural products from India and Netherlands.",
-      "image": "/images/service-sourcing.jpg",
+      "image": "/s1.png",
       "features": [
         "Quality Product Selection",
         "Farm-to-Port Management",
@@ -14,10 +14,10 @@
     },
     {
       "id": "supply-management",
-      "icon": "/icons/supply.svg",
+      "icon": "/fence.svg",
       "title": "Supply Management",
       "description": "From farm to global port, JRP Impex efficiently manages the complete supply chain process.",
-      "image": "/images/service-supply.jpg",
+      "image": "/s2.png",
       "features": [
         "End-to-End Supply Chain",
         "Quality Control",
@@ -26,10 +26,10 @@
     },
     {
       "id": "import-export",
-      "icon": "/icons/export.svg",
+      "icon": "/tree.svg",
       "title": "Import & Export",
       "description": "With operations in India and the Netherlands, we guide businesses navigating international trade.",
-      "image": "/images/service-export.jpg",
+      "image": "/s3.png",
       "features": [
         "International Trade Expertise",
         "Customs Clearance",

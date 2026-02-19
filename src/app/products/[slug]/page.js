@@ -75,6 +75,20 @@ export default function ProductDetailPage() {
     <>
       {/* Premium Breadcrumb Hero */}
       <section className="relative gradient-hero py-24 lg:py-32 overflow-hidden">
+
+        {/* ── Full background image ─────────────────────────── */}
+        <div className="absolute inset-0">
+          <Image
+            src={"/about_us.jpg"}
+            alt={product.title}
+            fill
+            className="object-cover object-center"
+            priority
+          />
+          {/* Dark-to-light green overlay — left to right */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-primary-dark)]/95 via-[var(--color-primary)]/75 to-[var(--color-primary-light)]/30" />
+        </div>
+
         {/* Animated background pattern */}
         <div className="absolute inset-0 opacity-[0.07]">
           <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
@@ -101,11 +115,13 @@ export default function ProductDetailPage() {
           </svg>
         </div>
 
-        {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-primary-dark/20"></div>
+        {/* Gradient overlay — bottom fade */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[var(--color-primary-dark)]/20" />
 
         <div className="container-custom relative z-10">
           <div className="flex items-center justify-between">
+
+            {/* Left — Text */}
             <div className="max-w-3xl">
               <span className="inline-block px-4 py-1.5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-accent-gold-lt text-sm font-semibold tracking-wide uppercase mb-6">
                 {product.category}
@@ -158,23 +174,24 @@ export default function ProductDetailPage() {
               </div>
             </div>
 
-            {/* Decorative floating element */}
+            {/* Right — Floating product image circle */}
             <div className="hidden lg:block">
               <div className="relative">
-                <div className="absolute inset-0 bg-accent-gold/20 rounded-full blur-3xl"></div>
-                <div className="relative w-56 h-56 bg-white/10 backdrop-blur-sm rounded-full border-2 border-white/20 flex items-center justify-center shadow-lift">
-                  <div className="w-40 h-40 bg-white rounded-full flex items-center justify-center">
-                    <svg
-                      className="w-24 h-24 text-primary"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z" />
-                    </svg>
+                <div className="absolute inset-0 bg-[var(--color-accent-gold)]/20 rounded-full blur-3xl" />
+                <div className="relative w-56 h-56 bg-white/10 backdrop-blur-sm rounded-full border-2 border-white/20 flex items-center justify-center shadow-[var(--shadow-lift)]">
+                  <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-white/30">
+                    <Image
+                      src={product.image}
+                      alt={product.title}
+                      width={160}
+                      height={160}
+                      className="object-cover w-full h-full"
+                    />
                   </div>
                 </div>
               </div>
             </div>
+
           </div>
         </div>
 
@@ -192,6 +209,7 @@ export default function ProductDetailPage() {
             />
           </svg>
         </div>
+
       </section>
 
       {/* Premium Product Content */}
@@ -323,11 +341,10 @@ export default function ProductDetailPage() {
                           <button
                             key={index}
                             onClick={() => setCurrentImageIndex(index)}
-                            className={`relative aspect-square rounded-xl overflow-hidden transition-all duration-300 ${
-                              currentImageIndex === index
-                                ? "ring-3 ring-accent-gold shadow-gold scale-105"
-                                : "ring-1 ring-border-light hover:ring-2 hover:ring-primary hover:scale-105"
-                            }`}
+                            className={`relative aspect-square rounded-xl overflow-hidden transition-all duration-300 ${currentImageIndex === index
+                              ? "ring-3 ring-accent-gold shadow-gold scale-105"
+                              : "ring-1 ring-border-light hover:ring-2 hover:ring-primary hover:scale-105"
+                              }`}
                           >
                             <Image
                               src={img}
@@ -451,11 +468,10 @@ export default function ProductDetailPage() {
                   <div className="flex gap-2 px-6 lg:px-8">
                     <button
                       onClick={() => setActiveTab("description")}
-                      className={`py-4 px-6 font-semibold transition-all duration-300 relative ${
-                        activeTab === "description"
-                          ? "text-primary"
-                          : "text-text-muted hover:text-primary"
-                      }`}
+                      className={`py-4 px-6 font-semibold transition-all duration-300 relative ${activeTab === "description"
+                        ? "text-primary"
+                        : "text-text-muted hover:text-primary"
+                        }`}
                     >
                       Description
                       {activeTab === "description" && (
@@ -464,11 +480,10 @@ export default function ProductDetailPage() {
                     </button>
                     <button
                       onClick={() => setActiveTab("specifications")}
-                      className={`py-4 px-6 font-semibold transition-all duration-300 relative ${
-                        activeTab === "specifications"
-                          ? "text-primary"
-                          : "text-text-muted hover:text-primary"
-                      }`}
+                      className={`py-4 px-6 font-semibold transition-all duration-300 relative ${activeTab === "specifications"
+                        ? "text-primary"
+                        : "text-text-muted hover:text-primary"
+                        }`}
                     >
                       Specifications
                       {activeTab === "specifications" && (
@@ -498,7 +513,7 @@ export default function ProductDetailPage() {
                       </h3>
                       <div className="gold-rule mb-6"></div>
                       {product.specifications &&
-                      product.specifications.length > 0 ? (
+                        product.specifications.length > 0 ? (
                         <ul className="space-y-4">
                           {product.specifications.map((spec, index) => (
                             <li
@@ -575,25 +590,56 @@ export default function ProductDetailPage() {
                     </svg>
                   </div>
 
-                  <div className="flex items-start gap-6 relative z-10">
+                  <div className="relative z-10 flex items-start gap-6">
+
+                    {/* Icon block */}
                     <div className="relative flex-shrink-0">
-                      <div className="absolute inset-0 bg-accent-gold/30 rounded-2xl blur-xl"></div>
-                      <div className="relative w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center border border-white/30">
-                        <ShieldCheck className="w-9 h-9 text-accent-gold-lt" />
+                      <div className="absolute inset-0 bg-[var(--color-accent-gold)]/30 rounded-sm blur-xl" />
+                      <div className="relative w-16 h-16 bg-white/10 backdrop-blur-sm rounded-sm border border-[var(--color-accent-gold)]/40 flex items-center justify-center shadow-[var(--shadow-gold)]">
+                        <ShieldCheck className="w-9 h-9 text-[var(--color-accent-gold)]" />
+                      </div>
+                      {/* Gold corner accent */}
+                      <div className="absolute -top-1 -right-1 w-3 h-3 border-t-2 border-r-2 border-[var(--color-accent-gold)] rounded-tr-sm" />
+                      <div className="absolute -bottom-1 -left-1 w-3 h-3 border-b-2 border-l-2 border-[var(--color-accent-gold)]/50 rounded-bl-sm" />
+                    </div>
+
+                    {/* Content */}
+                    <div className="flex-1">
+                      {/* Eyebrow */}
+                      <div className="flex items-center gap-2 mb-2">
+                        <div className="w-4 h-[2px] bg-[var(--color-accent-gold)]" />
+                        <span className="text-[var(--color-accent-gold)] text-[10px] font-bold uppercase tracking-[0.2em] font-[var(--font-body)]">
+                          Our Promise
+                        </span>
+                      </div>
+
+                      <h3 className="font-[var(--font-heading)] font-bold text-white text-2xl lg:text-3xl leading-snug mb-3">
+                        Quality Assurance
+                        <span className="block text-[var(--color-accent-gold)]">Guarantee</span>
+                      </h3>
+
+                      {/* Gold rule */}
+                      <div className="w-16 h-[3px] bg-gradient-to-r from-[var(--color-accent-gold)] to-[var(--color-accent-gold-lt)] rounded-full mb-4" />
+
+                      <p className="text-white/80 text-base lg:text-lg font-[var(--font-body)] leading-relaxed">
+                        All our products undergo strict quality control measures to ensure they
+                        meet international standards. We are committed to delivering only the
+                        finest quality products to our clients worldwide.
+                      </p>
+
+                      {/* Trust tags */}
+                      <div className="flex flex-wrap gap-2 mt-5">
+                        {["ISO Certified", "Lab Tested", "Export Grade"].map((tag, i) => (
+                          <span
+                            key={i}
+                            className="px-3 py-1 bg-white/10 border border-white/20 rounded-full text-white/80 text-xs font-semibold font-[var(--font-body)] tracking-wide"
+                          >
+                            ✓ {tag}
+                          </span>
+                        ))}
                       </div>
                     </div>
-                    <div>
-                      <h3 className="text-2xl lg:text-3xl font-bold mb-3 font-heading">
-                        Quality Assurance Guarantee
-                      </h3>
-                      <div className="w-20 h-1 bg-accent-gold-lt/50 rounded-full mb-4"></div>
-                      <p className="text-white/90 text-lg leading-relaxed">
-                        All our products undergo strict quality control measures
-                        to ensure they meet international standards. We are
-                        committed to delivering only the finest quality products
-                        to our clients worldwide.
-                      </p>
-                    </div>
+
                   </div>
                 </div>
               </div>
@@ -604,140 +650,118 @@ export default function ProductDetailPage() {
 
       {/* Premium Related Products */}
       {relatedProducts.length > 0 && (
-        <section className="py-20 lg:py-32 section-cream">
-          <div className="container-custom">
+        <section className="py-20 lg:py-32 section-cream relative overflow-hidden">
+
+          {/* Decorative bg */}
+          <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-[var(--color-accent-gold)]/40 to-transparent" />
+          <div className="absolute top-20 left-10 w-24 h-24 border-2 border-[var(--color-primary)]/10 rounded-full pointer-events-none" />
+          <div className="absolute bottom-20 right-10 w-32 h-32 border-2 border-[var(--color-accent-gold)]/10 rounded-full pointer-events-none" />
+
+          <div className="container-custom relative z-10">
+
+            {/* Header */}
             <div className="text-center mb-16">
-              <span className="section-label">You May Also Like</span>
-              <h2 className="section-title section-title--center text-3xl md:text-4xl font-bold mt-4">
+              <div className="inline-flex items-center gap-3 mb-4">
+                <div className="w-6 h-[2px] bg-[var(--color-primary-light)]" />
+                <span className="text-[var(--color-primary-light)] text-xs font-bold uppercase tracking-[0.2em] font-[var(--font-body)]">
+                  You May Also Like
+                </span>
+                <div className="w-6 h-[2px] bg-[var(--color-primary-light)]" />
+              </div>
+
+              <h2 className="font-[var(--font-heading)] font-bold text-[var(--color-primary)] text-3xl md:text-4xl lg:text-5xl leading-[1.15] tracking-tight">
                 Related Products
               </h2>
-              <p className="text-text-muted text-lg mt-6 max-w-2xl mx-auto">
-                Explore more premium products from our {product.category}{" "}
+
+              <div className="w-12 h-[3px] bg-gradient-to-r from-[var(--color-accent-gold)] to-[var(--color-accent-gold-lt)] rounded-full mx-auto mt-5 mb-5" />
+
+              <p className="text-[var(--color-text-muted)] text-lg font-[var(--font-body)] max-w-2xl mx-auto">
+                Explore more premium products from our{" "}
+                <span className="text-[var(--color-primary)] font-semibold">
+                  {product.category}
+                </span>{" "}
                 collection
               </p>
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Grid */}
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
               {relatedProducts.map((relatedProduct, index) => (
                 <Link
                   key={relatedProduct.id}
                   href={`/products/${relatedProduct.slug}`}
-                  className="card-elevated group"
+                  className="group relative flex flex-col bg-white rounded-sm overflow-hidden shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-lift)] hover:-translate-y-1.5 border-2 border-[var(--color-border)] hover:border-[var(--color-accent-gold)] transition-all duration-300"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  <div className="relative h-72 overflow-hidden">
+                  {/* Gold top rule on hover */}
+                  <div className="absolute top-0 left-0 right-0 h-[2px] bg-[var(--color-accent-gold)] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 z-10" />
+
+                  {/* Image */}
+                  <div className="relative h-64 overflow-hidden flex-shrink-0">
                     <Image
                       src={relatedProduct.image}
                       alt={relatedProduct.title}
                       fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-500"
+                      className="object-cover group-hover:scale-110 transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-                    {/* Hover overlay badge */}
-                    <div className="absolute top-4 right-4 bg-accent-gold text-primary-dark px-3 py-1 rounded-full text-xs font-bold opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-                      View Details
+                    {/* Gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-primary-dark)]/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                    {/* Index badge */}
+                    <div className="absolute top-3 right-3 z-10 w-7 h-7 rounded-full bg-[var(--color-accent-gold)] flex items-center justify-center shadow-md">
+                      <span className="text-[var(--color-primary-dark)] text-[10px] font-black leading-none">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                    </div>
+
+                    {/* Category badge */}
+                    <div className="absolute top-3 left-3 z-10">
+                      <span className="px-3 py-1 bg-[var(--color-accent-green)] text-white text-[10px] font-bold uppercase tracking-wider rounded-full shadow-md">
+                        {relatedProduct.category}
+                      </span>
+                    </div>
+
+                    {/* Arrow on hover */}
+                    <div className="absolute inset-0 flex items-end justify-end p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="bg-white rounded-full p-2.5 shadow-[var(--shadow-lift)] transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                        <ChevronRight className="w-4 h-4 text-[var(--color-primary)]" />
+                      </div>
                     </div>
                   </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-primary-dark mb-3 group-hover:text-primary transition-colors duration-300 font-heading">
+
+                  {/* Content */}
+                  <div className="flex flex-col flex-1 p-5 bg-[var(--color-primary)] relative overflow-hidden">
+                    {/* Subtle pattern */}
+                    <div className="absolute -top-6 -right-6 w-20 h-20 rounded-full bg-white/5 pointer-events-none" />
+                    <div className="absolute -top-2 -right-2 w-10 h-10 rounded-full bg-white/5 pointer-events-none" />
+
+                    <h3 className="font-[var(--font-heading)] font-semibold text-white text-base mb-2 leading-snug group-hover:text-[var(--color-accent-gold)] transition-colors duration-300">
                       {relatedProduct.title}
                     </h3>
-                    <p className="text-text-muted text-sm mb-4 line-clamp-2 leading-relaxed">
+
+                    <p className="text-white/70 text-xs font-[var(--font-body)] leading-relaxed line-clamp-2 mb-4 flex-1">
                       {relatedProduct.description}
                     </p>
-                    <div className="flex items-center justify-between pt-4 border-t border-border-light">
-                      <span className="text-sm text-accent-gold font-semibold">
+
+                    {/* Footer */}
+                    <div className="flex items-center justify-between pt-3 border-t border-white/15">
+                      <span className="text-[var(--color-accent-gold)] text-xs font-bold uppercase tracking-wide font-[var(--font-body)]">
                         Learn More
                       </span>
-                      <ChevronRight className="w-5 h-5 text-accent-gold group-hover:translate-x-1 transition-transform duration-300" />
+                      <div className="w-7 h-7 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-[var(--color-accent-gold)] transition-all duration-300">
+                        <ChevronRight className="w-3.5 h-3.5 text-white group-hover:translate-x-0.5 transition-transform duration-300" />
+                      </div>
                     </div>
                   </div>
                 </Link>
               ))}
             </div>
+
           </div>
         </section>
       )}
 
-      {/* Premium CTA Section */}
-      <section className="py-20 lg:py-24 bg-white">
-        <div className="container-custom">
-          <div className="gradient-hero rounded-3xl overflow-hidden relative">
-            {/* Decorative pattern */}
-            <div className="absolute inset-0 opacity-10">
-              <svg
-                width="100%"
-                height="100%"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <pattern
-                  id="cta-pattern"
-                  width="60"
-                  height="60"
-                  patternUnits="userSpaceOnUse"
-                >
-                  <circle cx="30" cy="30" r="1.5" fill="white" />
-                </pattern>
-                <rect width="100%" height="100%" fill="url(#cta-pattern)" />
-              </svg>
-            </div>
-
-            <div className="relative z-10 p-8 lg:p-16 text-center text-white">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 font-heading">
-                Interested in {product.title}?
-              </h2>
-              <p className="text-xl mb-10 text-white/90 max-w-2xl mx-auto leading-relaxed">
-                Contact us for pricing, bulk orders, and custom requirements
-              </p>
-              <div className="flex flex-wrap gap-4 justify-center">
-                <Link
-                  href="/contact"
-                  className="btn-gold inline-flex items-center gap-3 group"
-                >
-                  <span>Request a Quote</span>
-                  <svg
-                    className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M17 8l4 4m0 0l-4 4m4-4H3"
-                    />
-                  </svg>
-                </Link>
-                <Link
-                  href="/products"
-                  className="btn-outline border-white text-white hover:bg-white hover:text-primary inline-flex items-center gap-3 group"
-                >
-                  <span>View All Products</span>
-                  <svg
-                    className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </Link>
-              </div>
-            </div>
-
-            {/* Decorative elements */}
-            <div className="absolute top-10 left-10 w-20 h-20 border-2 border-white/20 rounded-full"></div>
-            <div className="absolute bottom-10 right-10 w-32 h-32 border-2 border-white/20 rounded-full"></div>
-          </div>
-        </div>
-      </section>
     </>
   );
 }

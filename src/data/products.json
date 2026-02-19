@@ -4,28 +4,28 @@
       "id": "nuts",
       "title": "Nuts",
       "slug": "nuts",
-      "image": "/images/product-nuts.jpg",
+      "image": "/nuts.jpg",
       "description": "Premium quality nuts sourced from the finest farms"
     },
     {
       "id": "spices",
       "title": "Spices",
       "slug": "spices",
-      "image": "/images/product-spices.jpg",
+      "image": "/spices.png",
       "description": "Authentic Indian spices with rich aroma and flavor"
     },
     {
       "id": "herbs",
       "title": "Herbs",
       "slug": "herbs",
-      "image": "/images/product-herbs.jpg",
+      "image": "/herbs.png",
       "description": "Fresh and aromatic herbs for culinary excellence"
     },
     {
       "id": "grains",
       "title": "Grains",
       "slug": "grains",
-      "image": "/images/product-grains.jpg",
+      "image": "/grains.jpg",
       "description": "High-quality grains and pulses"
     }
   ],

@@ -48,6 +48,19 @@ export default function ProductsPage() {
     <>
       {/* Premium Breadcrumb Hero */}
       <section className="relative gradient-hero py-24 lg:py-32 overflow-hidden">
+        {/* ── Full background image ─────────────────────────── */}
+        <div className="absolute inset-0">
+          <Image
+            src="/about_us.jpg"
+            alt="Our Products"
+            fill
+            className="object-cover object-center"
+            priority
+          />
+          {/* Dark-to-light green overlay — left to right */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-primary-dark)]/95 via-[var(--color-primary)]/75 to-[var(--color-primary-light)]/30" />
+        </div>
+
         {/* Animated background pattern */}
         <div className="absolute inset-0 opacity-[0.07]">
           <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
@@ -75,7 +88,7 @@ export default function ProductsPage() {
         </div>
 
         {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-primary-dark/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[var(--color-primary-dark)]/20" />
 
         <div className="container-custom relative z-10">
           <div className="text-center max-w-3xl mx-auto">
@@ -86,8 +99,8 @@ export default function ProductsPage() {
               Our Products
             </h1>
             <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
-              Discover our extensive range of premium agricultural products,
-              sourced from the finest farms and delivered with excellence.
+              Discover our extensive range of premium agricultural products, sourced
+              from the finest farms and delivered with excellence.
             </p>
             <div className="flex items-center justify-center gap-3 text-white/90">
               <Link
@@ -109,55 +122,54 @@ export default function ProductsPage() {
                   d="M9 5l7 7-7 7"
                 />
               </svg>
-              <span className="text-accent-gold-lt font-semibold">
-                Products
-              </span>
+              <span className="text-accent-gold-lt font-semibold">Products</span>
             </div>
           </div>
-        </div>
-
-        {/* Decorative bottom wave */}
-        <div className="absolute bottom-0 left-0 right-0">
-          <svg
-            viewBox="0 0 1440 120"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-full h-auto"
-          >
-            <path
-              d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 82C1200 84 1320 78 1380 75L1440 72V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z"
-              fill="white"
-            />
-          </svg>
         </div>
       </section>
 
       {/* Premium Products Content */}
-      <section className="py-20 lg:py-32 bg-white relative">
-        <div className="container-custom">
-          {/* Premium Category Filter */}
+      <section className="py-20 lg:py-32 bg-white relative overflow-hidden">
+
+        {/* Decorative bg elements */}
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[var(--color-accent-gold)]/40 to-transparent" />
+        <div className="absolute top-20 left-10 w-24 h-24 border-2 border-[var(--color-primary)]/10 rounded-full pointer-events-none" />
+        <div className="absolute bottom-20 right-10 w-32 h-32 border-2 border-[var(--color-accent-gold)]/10 rounded-full pointer-events-none" />
+        <div className="absolute top-1/2 right-0 w-64 h-64 bg-[var(--color-primary)]/[0.03] rounded-full blur-3xl pointer-events-none" />
+
+        <div className="container-custom relative z-10">
+
+          {/* ── Category Filter ─────────────────────────────── */}
           <div className="mb-16">
-            <div className="text-center mb-8">
-              <span className="section-label">Browse by Category</span>
-              <h2 className="section-title section-title--center text-2xl md:text-3xl font-bold mt-3">
+            <div className="text-center mb-10">
+              {/* Eyebrow */}
+              <div className="inline-flex items-center gap-3 mb-4">
+                <div className="w-6 h-[2px] bg-[var(--color-primary-light)]" />
+                <span className="text-[var(--color-primary-light)] text-xs font-bold uppercase tracking-[0.2em] font-[var(--font-body)]">
+                  Browse by Category
+                </span>
+                <div className="w-6 h-[2px] bg-[var(--color-primary-light)]" />
+              </div>
+              <h2 className="font-[var(--font-heading)] font-bold text-[var(--color-primary)] text-2xl md:text-3xl lg:text-4xl tracking-tight">
                 Filter Products
               </h2>
+              <div className="w-12 h-[3px] bg-gradient-to-r from-[var(--color-accent-gold)] to-[var(--color-accent-gold-lt)] rounded-full mx-auto mt-4" />
             </div>
 
-            <div className="flex flex-wrap gap-4 justify-center">
+            {/* Filter buttons */}
+            <div className="flex flex-wrap gap-3 justify-center">
               <button
                 onClick={() => handleCategoryChange("all")}
-                className={`group relative px-8 py-4 rounded-xl font-semibold transition-all duration-300 overflow-hidden ${
-                  selectedCategory === "all"
-                    ? "bg-gradient-to-br from-primary to-primary-light text-white shadow-lift scale-105"
-                    : "bg-white text-primary-dark hover:text-white shadow-card hover:shadow-lift border border-border-light"
-                }`}
+                className={`group relative px-6 py-3 rounded-sm font-semibold text-sm transition-all duration-300 overflow-hidden border-2 ${selectedCategory === "all"
+                    ? "bg-[var(--color-primary)] text-white border-[var(--color-primary)] shadow-[var(--shadow-lift)]"
+                    : "bg-white text-[var(--color-primary-dark)] border-[var(--color-border)] hover:border-[var(--color-primary)] hover:text-white"
+                  }`}
               >
                 {selectedCategory !== "all" && (
-                  <span className="absolute inset-0 bg-gradient-to-br from-primary to-primary-light transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
+                  <span className="absolute inset-0 bg-[var(--color-primary)] transform translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                 )}
                 <span className="relative z-10 flex items-center gap-2">
-                  <Package className="w-5 h-5" />
+                  <Package className="w-4 h-4" />
                   All Products
                 </span>
               </button>
@@ -166,37 +178,32 @@ export default function ProductsPage() {
                 <button
                   key={category.id}
                   onClick={() => handleCategoryChange(category.slug)}
-                  className={`group relative px-8 py-4 rounded-xl font-semibold transition-all duration-300 overflow-hidden ${
-                    selectedCategory === category.slug
-                      ? "bg-gradient-to-br from-primary to-primary-light text-white shadow-lift scale-105"
-                      : "bg-white text-primary-dark hover:text-white shadow-card hover:shadow-lift border border-border-light"
-                  }`}
+                  className={`group relative px-6 py-3 rounded-sm font-semibold text-sm transition-all duration-300 overflow-hidden border-2 ${selectedCategory === category.slug
+                      ? "bg-[var(--color-primary)] text-white border-[var(--color-primary)] shadow-[var(--shadow-lift)]"
+                      : "bg-white text-[var(--color-primary-dark)] border-[var(--color-border)] hover:border-[var(--color-primary)] hover:text-white"
+                    }`}
                 >
                   {selectedCategory !== category.slug && (
-                    <span className="absolute inset-0 bg-gradient-to-br from-primary to-primary-light transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
+                    <span className="absolute inset-0 bg-[var(--color-primary)] transform translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                   )}
                   <span className="relative z-10">{category.title}</span>
                 </button>
               ))}
             </div>
 
-            {/* Active filter indicator */}
+            {/* Active filter count */}
             <div className="text-center mt-6">
-              <p className="text-text-muted">
+              <p className="text-[var(--color-text-muted)] text-sm font-[var(--font-body)]">
                 Showing{" "}
-                <span className="font-bold text-primary">
+                <span className="font-bold text-[var(--color-primary)]">
                   {filteredProducts.length}
                 </span>{" "}
                 products
                 {selectedCategory !== "all" && (
                   <span className="ml-1">
                     in{" "}
-                    <span className="font-bold text-accent-gold">
-                      {
-                        productsData.categories.find(
-                          (c) => c.slug === selectedCategory,
-                        )?.title
-                      }
+                    <span className="font-bold text-[var(--color-accent-gold)]">
+                      {productsData.categories.find((c) => c.slug === selectedCategory)?.title}
                     </span>
                   </span>
                 )}
@@ -204,62 +211,74 @@ export default function ProductsPage() {
             </div>
           </div>
 
-          {/* Premium Products Grid */}
+          {/* ── Products Grid ───────────────────────────────── */}
           {filteredProducts.length > 0 ? (
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7">
               {filteredProducts.map((product, index) => (
                 <Link
                   key={product.id}
                   href={`/products/${product.slug}`}
-                  className="group card-elevated"
+                  className="group relative flex flex-col bg-white rounded-sm overflow-hidden shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-lift)] hover:-translate-y-1.5 border-2 border-[var(--color-border)] hover:border-[var(--color-accent-gold)] transition-all duration-300"
                   style={{ animationDelay: `${index * 50}ms` }}
                 >
+                  {/* Gold top rule on hover */}
+                  <div className="absolute top-0 left-0 right-0 h-[2px] bg-[var(--color-accent-gold)] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 z-10" />
+
                   {/* Product Image */}
-                  <div className="relative h-72 overflow-hidden">
+                  <div className="relative h-60 overflow-hidden flex-shrink-0">
                     <Image
                       src={product.image}
                       alt={product.title}
                       fill
                       className="object-cover group-hover:scale-110 transition-transform duration-700"
                     />
+
                     {/* Gradient overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-primary-dark)]/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                     {/* Category badge */}
-                    <div className="absolute top-4 left-4">
-                      <span className="badge badge-green shadow-card backdrop-blur-sm">
-                        {
-                          productsData.categories.find(
-                            (c) => c.slug === product.category,
-                          )?.title
-                        }
+                    <div className="absolute top-3 left-3 z-10">
+                      <span className="px-3 py-1 bg-[var(--color-accent-green)] text-white text-[10px] font-bold uppercase tracking-wider rounded-full shadow-md backdrop-blur-sm">
+                        {productsData.categories.find((c) => c.slug === product.category)?.title}
                       </span>
                     </div>
 
-                    {/* Quick view button */}
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <div className="bg-white/95 backdrop-blur-sm rounded-full p-3 shadow-lift transform scale-75 group-hover:scale-100 transition-transform duration-300">
-                        <ArrowRight className="w-6 h-6 text-primary" />
+                    {/* Index number badge */}
+                    <div className="absolute top-3 right-3 z-10 w-7 h-7 rounded-full bg-[var(--color-accent-gold)] flex items-center justify-center shadow-md">
+                      <span className="text-[var(--color-primary-dark)] text-[10px] font-black leading-none">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                    </div>
+
+                    {/* Quick view icon */}
+                    <div className="absolute inset-0 flex items-end justify-end p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="bg-white rounded-full p-2.5 shadow-[var(--shadow-lift)] transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                        <ArrowRight className="w-4 h-4 text-[var(--color-primary)]" />
                       </div>
                     </div>
                   </div>
 
                   {/* Product Info */}
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-primary-dark mb-3 font-heading group-hover:text-primary transition-colors duration-300">
+                  <div className="flex flex-col flex-1 p-5 bg-[var(--color-primary)] relative overflow-hidden">
+                    {/* Subtle pattern */}
+                    <div className="absolute -top-6 -right-6 w-20 h-20 rounded-full bg-white/5 pointer-events-none" />
+                    <div className="absolute -top-2 -right-2 w-10 h-10 rounded-full bg-white/5 pointer-events-none" />
+
+                    <h3 className="font-[var(--font-heading)] font-semibold text-white text-base mb-2 leading-snug group-hover:text-[var(--color-accent-gold)] transition-colors duration-300">
                       {product.title}
                     </h3>
-                    <p className="text-text-muted text-sm mb-4 line-clamp-2 leading-relaxed">
+
+                    <p className="text-white/70 text-xs font-[var(--font-body)] leading-relaxed line-clamp-2 mb-4 flex-1">
                       {product.description}
                     </p>
 
-                    {/* View Details Link */}
-                    <div className="flex items-center justify-between pt-4 border-t border-border-light">
-                      <span className="text-sm text-accent-gold font-semibold group-hover:text-primary transition-colors duration-300">
+                    {/* Footer */}
+                    <div className="flex items-center justify-between pt-3 border-t border-white/15">
+                      <span className="text-[var(--color-accent-gold)] text-xs font-bold uppercase tracking-wide font-[var(--font-body)]">
                         View Details
                       </span>
-                      <div className="w-8 h-8 bg-primary-muted rounded-full flex items-center justify-center group-hover:bg-primary transition-all duration-300">
-                        <ArrowRight className="w-4 h-4 text-primary group-hover:text-white group-hover:translate-x-1 transition-all duration-300" />
+                      <div className="w-7 h-7 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-[var(--color-accent-gold)] transition-all duration-300">
+                        <ArrowRight className="w-3.5 h-3.5 text-white group-hover:translate-x-0.5 transition-transform duration-300" />
                       </div>
                     </div>
                   </div>
@@ -267,17 +286,17 @@ export default function ProductsPage() {
               ))}
             </div>
           ) : (
+            /* Empty state */
             <div className="text-center py-20">
               <div className="max-w-md mx-auto">
-                <div className="w-24 h-24 bg-primary-muted rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Package className="w-12 h-12 text-primary" />
+                <div className="w-24 h-24 bg-[var(--color-primary-muted)] rounded-full flex items-center justify-center mx-auto mb-6 border-2 border-[var(--color-border)]">
+                  <Package className="w-12 h-12 text-[var(--color-primary)]" />
                 </div>
-                <h3 className="text-2xl font-bold text-primary-dark mb-3 font-heading">
+                <h3 className="font-[var(--font-heading)] text-2xl font-bold text-[var(--color-primary-dark)] mb-3">
                   No Products Found
                 </h3>
-                <p className="text-text-muted text-lg mb-8">
-                  No products found in this category. Try selecting a different
-                  category.
+                <p className="text-[var(--color-text-muted)] text-base mb-8 font-[var(--font-body)]">
+                  No products found in this category. Try selecting a different category.
                 </p>
                 <button
                   onClick={() => handleCategoryChange("all")}
@@ -288,87 +307,7 @@ export default function ProductsPage() {
               </div>
             </div>
           )}
-        </div>
 
-        {/* Decorative elements */}
-        <div className="absolute top-20 left-10 w-24 h-24 border-2 border-primary/10 rounded-full"></div>
-        <div className="absolute bottom-20 right-10 w-32 h-32 border-2 border-accent-gold/10 rounded-full"></div>
-      </section>
-
-      {/* Premium CTA Section */}
-      <section className="py-20 lg:py-24 section-cream relative overflow-hidden">
-        {/* Background pattern */}
-        <div className="absolute inset-0 opacity-[0.03]">
-          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-            <pattern
-              id="cta-pattern"
-              width="100"
-              height="100"
-              patternUnits="userSpaceOnUse"
-            >
-              <circle cx="50" cy="50" r="1.5" fill="currentColor" />
-            </pattern>
-            <rect width="100%" height="100%" fill="url(#cta-pattern)" />
-          </svg>
-        </div>
-
-        <div className="container-custom relative z-10">
-          <div className="card-elevated overflow-hidden">
-            <div className="relative gradient-hero p-12 lg:p-16 text-center text-white">
-              {/* Animated background blobs */}
-              <div className="absolute inset-0 opacity-10">
-                <div className="absolute top-0 left-0 w-96 h-96 bg-accent-gold rounded-full blur-3xl animate-pulse"></div>
-                <div
-                  className="absolute bottom-0 right-0 w-96 h-96 bg-primary-light rounded-full blur-3xl animate-pulse"
-                  style={{ animationDelay: "1s" }}
-                ></div>
-              </div>
-
-              <div className="relative z-10 max-w-3xl mx-auto">
-                <span className="inline-block px-4 py-1.5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-accent-gold-lt text-sm font-semibold tracking-wide uppercase mb-6">
-                  Ready to Order?
-                </span>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 font-heading">
-                  Interested in Our Products?
-                </h2>
-                <p className="text-xl mb-10 text-white/90 leading-relaxed">
-                  Get in touch with us for quotes, bulk orders, and custom
-                  requirements. Our team is ready to assist you.
-                </p>
-                <Link
-                  href="/contact"
-                  className="btn-gold inline-flex items-center gap-3 group"
-                >
-                  <span>Request a Quote</span>
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                </Link>
-
-                {/* Trust indicators */}
-                <div className="grid sm:grid-cols-3 gap-8 mt-12 pt-12 border-t border-white/20">
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-accent-gold-lt mb-2 font-heading">
-                      24/7
-                    </div>
-                    <div className="text-sm text-white/80">
-                      Customer Support
-                    </div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-accent-gold-lt mb-2 font-heading">
-                      100%
-                    </div>
-                    <div className="text-sm text-white/80">Quality Assured</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-accent-gold-lt mb-2 font-heading">
-                      Fast
-                    </div>
-                    <div className="text-sm text-white/80">Global Delivery</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
     </>

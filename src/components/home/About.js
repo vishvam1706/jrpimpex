@@ -29,43 +29,13 @@ export default function About() {
             <div className="absolute top-6 left-6 right-0 bottom-0 rounded-tl-[80px] rounded-br-[80px] bg-[var(--color-primary-muted)] -z-10" />
 
             {/* Main image */}
-            <div className="relative rounded-tl-[80px] rounded-br-[80px] overflow-hidden shadow-[0_20px_60px_rgba(26,77,51,.15)]">
+            <div className="relative">
               <Image
-                src="/images/warehouse.jpg"
+                src="/about1.png"
                 alt="JRP Impex Warehouse"
                 width={600}
                 height={500}
                 className="w-full h-auto object-cover"
-              />
-              {/* Dark gradient at bottom for stat overlay */}
-              <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[var(--color-primary-dark)]/80 to-transparent" />
-
-              {/* Stats bar inside image */}
-              <div className="absolute bottom-0 inset-x-0 flex items-center justify-around px-6 py-4">
-                {STATS.map(({ value, label }, i) => (
-                  <div key={label} className="flex items-center gap-3">
-                    {i > 0 && <div className="w-px h-7 bg-white/20" />}
-                    <div className="text-center">
-                      <div className="text-xl font-[var(--font-heading)] font-extrabold text-[var(--color-accent-gold)] leading-none">
-                        {value}
-                      </div>
-                      <div className="text-white/70 text-[10px] font-[var(--font-body)] uppercase tracking-wider mt-0.5">
-                        {label}
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Plant decoration */}
-            <div className="absolute -bottom-6 -left-4 w-28 h-28 pointer-events-none">
-              <Image
-                src="/images/plant-decoration.png"
-                alt=""
-                width={128}
-                height={128}
-                className="w-full h-auto drop-shadow-lg"
               />
             </div>
 
@@ -77,14 +47,14 @@ export default function About() {
           <div>
             {/* Eyebrow */}
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-[2px] bg-[var(--color-accent-gold)]" />
-              <span className="text-[var(--color-accent-gold)] text-xs font-bold uppercase tracking-[0.2em] font-[var(--font-body)]">
+              <div className="w-8 h-[2px] bg-[var(--color-primary-light)]" />
+              <span className="text-[var(--color-primary-light)] text-xs font-bold uppercase tracking-[0.2em] font-[var(--font-body)]">
                 Welcome to JRP Impex
               </span>
             </div>
 
             {/* Heading */}
-            <h2 className="font-[var(--font-heading)] font-bold text-[var(--color-primary-dark)] text-3xl md:text-4xl lg:text-5xl leading-[1.15] tracking-tight mb-5">
+            <h2 className="font-[var(--font-heading)] font-medium text-[var(--color-primary)] text-3xl md:text-4xl lg:text-5xl leading-[1.15] tracking-tight mb-5">
               Leading with Integrity in{" "}
               <span className="text-[var(--color-primary)]">Global Agro</span>{" "}
               Markets
@@ -106,7 +76,7 @@ export default function About() {
               {HIGHLIGHTS.map(({ title, desc }) => (
                 <li key={title} className="flex items-start gap-4">
                   {/* Icon */}
-                  <div className="shrink-0 w-8 h-8 rounded-full bg-[var(--color-primary)] flex items-center justify-center mt-0.5 shadow-md">
+                  <div className="shrink-0 w-8 h-8 rounded-full bg-[var(--color-accent-green)] flex items-center justify-center mt-0.5 shadow-md">
                     <svg
                       className="w-4 h-4 text-white"
                       fill="currentColor"
@@ -137,7 +107,7 @@ export default function About() {
             {/* CTA */}
             <Link
               href="/about"
-              className="inline-flex items-center gap-2 px-7 py-3.5 bg-[var(--color-primary)] text-white text-xs font-black uppercase tracking-widest rounded-sm font-[var(--font-body)] border-2 border-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] hover:border-[var(--color-primary-dark)] hover:shadow-lg hover:-translate-y-px transition-all duration-200 group"
+              className="inline-flex items-center gap-2 px-7 py-3.5 bg-[var(--color-accent-green)] text-white text-xs font-black uppercase tracking-widest rounded-sm font-[var(--font-body)] border-2 border-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] hover:border-[var(--color-primary-dark)] hover:shadow-lg hover:-translate-y-px transition-all duration-200 group"
             >
               Discover Our Story
               <svg

@@ -10,14 +10,14 @@ export default function Products() {
         <div className="text-center mb-14">
           {/* Eyebrow */}
           <div className="inline-flex items-center gap-3 mb-4">
-            <div className="w-6 h-[2px] bg-[var(--color-accent-gold)]" />
-            <span className="text-[var(--color-accent-gold)] text-xs font-bold uppercase tracking-[0.2em] font-[var(--font-body)]">
+            <div className="w-6 h-[2px] bg-[var(--color-accent-green)]" />
+            <span className="text-[var(--color-accent-green)] text-xs font-bold uppercase tracking-[0.2em] font-[var(--font-body)]">
               Explore Our Premium Agro Products
             </span>
-            <div className="w-6 h-[2px] bg-[var(--color-accent-gold)]" />
+            <div className="w-6 h-[2px] bg-[var(--color-accent-green)]" />
           </div>
 
-          <h2 className="font-[var(--font-heading)] font-bold text-[var(--color-primary-dark)] text-3xl md:text-4xl lg:text-5xl leading-[1.15] tracking-tight">
+          <h2 className="font-[var(--font-heading)] font-medium text-[var(--color-primary)] text-3xl md:text-4xl lg:text-5xl leading-[1.15] tracking-tight">
             Our Agro{" "}
             <span className="text-[var(--color-primary)]">Products</span>
           </h2>

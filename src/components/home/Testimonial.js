@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+import { ChevronLeft, ChevronRight, Star, User } from "lucide-react";
 import testimonialsData from "@/data/testimonials.json";
 import companyData from "@/data/company.json";
 
@@ -68,13 +68,7 @@ export default function Testimonial() {
               {/* Author */}
               <div className="flex items-start gap-4 mb-6 relative z-10">
                 <div className="relative shrink-0">
-                  <Image
-                    src={current.image}
-                    alt={current.name}
-                    width={60}
-                    height={60}
-                    className="rounded-full object-cover border-2 border-[var(--color-accent-gold)]/40"
-                  />
+                  <User className="w-12 h-12 text-[var(--color-primary-muted)]" />
                   {/* Online indicator */}
                   <span className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-emerald-400 border-2 border-white" />
                 </div>
@@ -154,15 +148,13 @@ export default function Testimonial() {
             <div className="absolute w-[115%] h-[115%] rounded-full border border-[var(--color-border)] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
 
             {/* Circle image */}
-            <div className="relative rounded-full overflow-hidden aspect-square w-full max-w-md shadow-[0_20px_60px_rgba(26,77,51,.15)] border-4 border-white">
+            <div className="relative overflow-hidden aspect-square w-full ">
               <Image
-                src="/images/farmer-field.jpg"
+                src="/Testimonial.png"
                 alt="Farming"
                 fill
                 className="object-cover"
               />
-              {/* Inner vignette */}
-              <div className="absolute inset-0 rounded-full shadow-[inset_0_0_40px_rgba(0,0,0,.15)]" />
             </div>
 
             {/* Stats badge */}

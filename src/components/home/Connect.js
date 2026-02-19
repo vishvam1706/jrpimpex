@@ -24,14 +24,14 @@ export default function Connect() {
             <div className="relative h-64 lg:h-auto min-h-[320px] overflow-hidden">
               {/* Farmer image */}
               <Image
-                src="/images/farmer-connect.jpg"
+                src="/sub.png"
                 alt="Connect with JRP Impex"
                 fill
                 className="object-cover"
               />
 
               {/* Green overlay */}
-              <div className="absolute inset-0 bg-[var(--color-primary)]/70" />
+              <div className="absolute inset-0 bg-[var(--color-primary)]/20" />
 
               {/* Diagonal separator — right edge */}
               <div
@@ -40,28 +40,6 @@ export default function Connect() {
                   clipPath: "polygon(60% 0, 100% 0, 100% 100%, 0% 100%)",
                 }}
               />
-
-              {/* Wheat icon circle */}
-              <div className="absolute inset-0 z-10 flex items-center justify-center">
-                <div className="relative">
-                  {/* Outer ring */}
-                  <div className="w-36 h-36 rounded-full border-2 border-[var(--color-accent-gold)]/40 flex items-center justify-center">
-                    {/* Inner gold circle */}
-                    <div className="w-28 h-28 rounded-full bg-[var(--color-accent-gold)] flex items-center justify-center shadow-[var(--shadow-gold)]">
-                      <Image
-                        src="/images/wheat-icon.png"
-                        alt=""
-                        width={64}
-                        height={64}
-                        className="w-16 h-16 object-contain"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Rotating dashed ring */}
-                  <div className="absolute inset-0 -m-3 rounded-full border-2 border-dashed border-[var(--color-accent-gold)]/25 animate-spin [animation-duration:20s]" />
-                </div>
-              </div>
 
               {/* Bottom label */}
               <div className="absolute bottom-5 left-0 right-0 z-10 text-center">
