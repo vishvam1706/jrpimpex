@@ -67,7 +67,7 @@ export default function Footer() {
             </p>
 
             {/* Social icons */}
-            <div className="flex gap-2">
+            {/* <div className="flex gap-2">
               {SOCIAL.map(({ icon: Icon, href, label }) => (
                 <a
                   key={label}
@@ -78,7 +78,7 @@ export default function Footer() {
                   <Icon className="w-4 h-4" />
                 </a>
               ))}
-            </div>
+            </div> */}
           </div>
 
           {/* ── Col 2 — Top Links ──────────────────────────── */}
@@ -173,18 +173,28 @@ export default function Footer() {
                   {companyData.contact.email}
                 </a>
               </li>
-              <li>
-                <a
-                  href={`tel:${companyData.contact.phone}`}
-                  className="flex items-start gap-3 text-white/50 text-sm font-[var(--font-body)] hover:text-[var(--color-accent-gold)] transition-colors duration-200 group"
-                >
-                  <Phone className="w-4 h-4 text-[var(--color-accent-gold)] shrink-0 mt-0.5" />
-                  {companyData.contact.phone}
-                </a>
+              <li className="flex items-start gap-3">
+                <Phone className="w-4 h-4 text-[var(--color-accent-gold)] shrink-0 mt-0.5" />
+                <div>
+                  <a
+                    href={`tel:${companyData.contact.phone1}`}
+                    className="flex items-start gap-3 text-white/50 text-sm font-[var(--font-body)] hover:text-[var(--color-accent-gold)] transition-colors duration-200 group"
+                  >
+                    {companyData.contact.phone1}
+                  </a>
+                  <a
+                    href={`tel:${companyData.contact.phone2}`}
+                    className="flex items-start gap-3 text-white/50 text-sm font-[var(--font-body)] hover:text-[var(--color-accent-gold)] transition-colors duration-200 group"
+                  >
+                    {companyData.contact.phone2}
+                  </a>
+                </div>
               </li>
               <li className="flex items-start gap-3 text-white/50 text-sm font-[var(--font-body)]">
                 <MapPin className="w-4 h-4 text-[var(--color-accent-gold)] shrink-0 mt-0.5" />
+                <a href="https://maps.app.goo.gl/pB1MChwxoCSURDfa8" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--color-accent-gold)] transition-colors duration-200">
                 {companyData.contact.address}
+                </a>
               </li>
             </ul>
 

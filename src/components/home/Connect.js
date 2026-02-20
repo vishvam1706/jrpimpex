@@ -1,5 +1,43 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
+
+import { useEffect, useState } from "react";
+
+function useCounter(end, duration = 2000) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let start = 0;
+    const increment = end / (duration / 16);
+
+    const timer = setInterval(() => {
+      start += increment;
+      if (start >= end) {
+        setCount(end);
+        clearInterval(timer);
+      } else {
+        setCount(Math.floor(start));
+      }
+    }, 16);
+
+    return () => clearInterval(timer);
+  }, [end, duration]);
+
+  return count;
+}
+
+
+function Counter({ value, suffix = "" }) {
+  const count = useCounter(value);
+
+  return (
+    <span>
+      {count.toLocaleString()}
+      {suffix}
+    </span>
+  );
+}
 
 export default function Connect() {
   return (
@@ -21,13 +59,15 @@ export default function Connect() {
 
           <div className="grid lg:grid-cols-2 gap-0 items-stretch">
             {/* ── Left — Image ────────────────────────────── */}
-            <div className="relative h-64 lg:h-auto min-h-[320px] overflow-hidden">
+            <div className="relative w-full h-[280px] sm:h-[340px] md:h-[420px] lg:h-auto lg:min-h-[520px] overflow-hidden">
               {/* Farmer image */}
               <Image
                 src="/sub.png"
                 alt="Connect with JRP Impex"
                 fill
-                className="object-cover"
+                priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover object-[60%_top] md:object-center"
               />
 
               {/* Green overlay */}
@@ -42,11 +82,11 @@ export default function Connect() {
               />
 
               {/* Bottom label */}
-              <div className="absolute bottom-5 left-0 right-0 z-10 text-center">
+              {/* <div className="absolute bottom-5 left-0 right-0 z-10 text-center">
                 <span className="text-white/60 text-xs font-[var(--font-body)] uppercase tracking-[0.2em]">
                   Trusted Since 2010
                 </span>
-              </div>
+              </div> */}
             </div>
 
             {/* ── Right — Content ──────────────────────────── */}
@@ -79,7 +119,7 @@ export default function Connect() {
 
                 <p className="text-white/60 text-base font-[var(--font-body)] leading-relaxed mb-8 max-w-sm">
                   Partner with JRP Impex for a seamless, world-class agro
-                  sourcing experience — quality guaranteed, delivery trusted.
+                  sourcing experience quality guaranteed, delivery trusted.
                 </p>
 
                 {/* CTAs */}
@@ -113,24 +153,35 @@ export default function Connect() {
                 </div>
 
                 {/* Trust signals */}
-                <div className="flex items-center gap-6 mt-10 pt-8 border-t border-white/10">
-                  {[
-                    { value: "ISO", label: "Certified" },
-                    { value: "50+", label: "Countries" },
-                    { value: "15+", label: "Years Trust" },
-                  ].map(({ value, label }, i) => (
-                    <div key={label} className="flex items-center gap-3">
-                      {i > 0 && <div className="w-px h-7 bg-white/10" />}
-                      <div>
-                        <div className="font-[var(--font-heading)] font-extrabold text-[var(--color-accent-gold)] text-lg leading-none">
-                          {value}
-                        </div>
-                        <div className="text-white/40 text-[10px] font-[var(--font-body)] uppercase tracking-wider mt-0.5">
-                          {label}
+                <div className="mt-10 pt-8 border-t border-white/10">
+                  <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 items-center gap-y-6 lg:gap-6 justify-center">
+                    {[
+                      { value: 1000, suffix: "+", label: "Solutions for Importers" },
+                      { value: 555, suffix: "k+", label: "Solutions for Exporters" },
+                      { value: 980, suffix: "+", label: "Domestic Business" },
+                      { value: 24, suffix: "+", label: "Support 24/7" },
+                    ].map(({ value, suffix, label }, i) => (
+                      <div
+                        key={label}
+                        className="flex items-center justify-center lg:justify-start gap-3 relative px-2 lg:px-0"
+                      >
+                        {i > 0 && (
+                          <div className="hidden lg:block absolute -left-3 top-1/2 -translate-y-1/2 w-px h-7 bg-white/10" />
+                        )}
+
+                        <div className="text-center lg:text-left">
+                          <div className="font-[var(--font-heading)] font-extrabold text-[var(--color-accent-gold)] text-lg leading-none">
+                            <Counter value={value} suffix={suffix} />
+                          </div>
+
+                          <div className="text-white/40 text-[10px] font-[var(--font-body)] uppercase tracking-wider mt-0.5">
+                            {label}
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+
+                  </div>
                 </div>
               </div>
             </div>

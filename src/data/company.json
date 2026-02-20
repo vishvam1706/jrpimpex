@@ -3,20 +3,23 @@
   "tagline": "We are | A service company",
   "description": "JRP Impex, we are dedicated to providing top-quality agricultural products to our global clientele. With a commitment to excellence and customer satisfaction, we have established ourselves as a trusted name in the industry.",
   "contact": {
-    "phone": "+91 99043 88999",
-    "email": "exports@jrpimpex.com",
-    "address": "502, RK Prime-2, 150 FT Ring Road, Opp. Balaji Hall, Rajkot, Gujarat-360007, INDIA"
+    "phone1": "+91 9909998389",
+    "phone2": "+91 8866633221",
+    "email": "contact@akshar-exports.com",
+    "email1": "nihar@akshar-exports.com",
+    "email2": "sagar@akshar-exports.com",
+    "address": "AKSHAR EXPORT, JAY INDUSTRIAL PARK-3, PLOT NO.10/11, DHORAJI-JUNAGADH ROAD, AT SUKHPUR, JUNAGADH, GUJARAT, 362310, INDIA"
   },
   "social": {
-    "facebook": "#",
-    "instagram": "#",
-    "twitter": "#",
-    "linkedin": "#",
-    "youtube": "#"
+    "facebook": "https://www.facebook.com/jrpimpex",
+    "instagram": "https://www.instagram.com/jrpimpex123",
+    "twitter": "https://x.com/jrpimpex",
+    "linkedin": "https://www.linkedin.com/company/thejrpimpex",
+    "youtube": "https://in.pinterest.com/jrpimex/"
   },
   "stats": {
     "experience": "10+",
-    "clients": "4000+",
+    "clients": "4K+",
     "countries": "25+",
     "products": "100+"
   },

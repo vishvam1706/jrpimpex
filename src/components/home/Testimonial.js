@@ -68,7 +68,8 @@ export default function Testimonial() {
               {/* Author */}
               <div className="flex items-start gap-4 mb-6 relative z-10">
                 <div className="relative shrink-0">
-                  <User className="w-12 h-12 text-[var(--color-primary-muted)]" />
+                  <Image src={current.image} height={48} width={48} className="w-12 h-12 rounded-full object-cover" alt={current.name} />
+                  {/* <User className="w-12 h-12 text-[var(--color-primary-muted)]" /> */}
                   {/* Online indicator */}
                   <span className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-emerald-400 border-2 border-white" />
                 </div>

@@ -369,16 +369,7 @@ export default function ContactPage() {
               {/* Premium Map */}
               <div className="card-elevated overflow-hidden">
                 <div className="relative w-full h-96 lg:h-[450px]">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.6789!2d70.7849!3d22.3039!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDE4JzE0LjAiTiA3MMKwNDcnMDUuNiJF!5e0!3m2!1sen!2sin!4v1234567890"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen=""
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    className="grayscale hover:grayscale-0 transition-all duration-500"
-                  />
+                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d118718.43174331966!2d70.5025341!3d21.587836!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395802c1c602e0ed%3A0x8e8780878538cc6a!2sJay%20Industrial%20park!5e0!3m2!1sen!2sin!4v1771575458502!5m2!1sen!2sin" width="600" height="450" style={{border:0}} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                   {/* Location badge overlay */}
                   <div className="absolute top-6 left-6 bg-white/95 backdrop-blur-sm rounded-xl shadow-lift px-4 py-3 flex items-center gap-3">
                     <div className="w-10 h-10 bg-gradient-to-br from-primary to-primary-light rounded-lg flex items-center justify-center">
@@ -389,7 +380,7 @@ export default function ContactPage() {
                         We&apos;re Located
                       </div>
                       <div className="text-sm font-bold text-primary-dark">
-                        Surat, India
+                        Junagadh, India
                       </div>
                     </div>
                   </div>

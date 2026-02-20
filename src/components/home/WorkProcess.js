@@ -119,7 +119,7 @@ export default function WorkProcess() {
                 <div className="absolute top-0 left-0 right-0 h-[2px] bg-[var(--color-accent-gold)] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300" />
 
                 {/* ── Step shape badge — top left ── */}
-                <div className="absolute top-0 right-0 w-16 h-16 group-hover:scale-105 transition-transform duration-200">
+                <div className="absolute top-0 right-0 w-10 h-10 md:w-16 md:h-16 group-hover:scale-105 transition-transform duration-200">
                   {/* step-shape.png as background */}
                   <div className="relative w-full h-full">
                     <Image
@@ -130,7 +130,7 @@ export default function WorkProcess() {
                     />
                     {/* Number centered on top of shape */}
                     <div className="absolute inset-0 flex items-center justify-center pb-1">
-                      <span className="text-[var(--color-primary-dark)] text-sm font-black font-[var(--font-heading)] leading-none drop-shadow-sm">
+                      <span className="text-[var(--color-primary-dark)] text-xs md:text-sm font-black font-[var(--font-heading)] leading-none drop-shadow-sm">
                         {step.number}
                       </span>
                     </div>
@@ -146,7 +146,7 @@ export default function WorkProcess() {
                 </p>
 
                 {/* Icon — bottom right watermark */}
-                <div className="absolute bottom-4 right-4 text-white/10 group-hover:text-white/20 transition-colors duration-300">
+                <div className="absolute bottom-2 right-2 text-white/10 group-hover:text-white/20 transition-colors duration-300">
                   {step.icon}
                 </div>
               </div>
@@ -162,7 +162,8 @@ export default function WorkProcess() {
             src="/green-area.png"
             alt="Green area decoration"
             fill
-            className="object-cover object-top"
+            quality={100}
+            className="object-contain object-bottom w-full"
           />
         </div>
       </div>

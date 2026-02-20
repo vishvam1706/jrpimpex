@@ -110,7 +110,7 @@ export default function AboutPage() {
       <section className="py-20 lg:py-32 bg-white relative">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="order-2 lg:order-1">
+            <div className="order-1 lg:order-1">
               <span className="section-label text-[var(--color-accent-green)]">About JRP IMPEX</span>
               <h2 className="section-title text-3xl md:text-4xl lg:text-5xl font-medium mt-4 mb-6">
                 Leading with Integrity in Global Agro Markets
@@ -142,32 +142,72 @@ export default function AboutPage() {
                 </div>
               </div>
             </div>
-            <div className="relative order-1 lg:order-2">
-              <div className="relative">
-                {/* Decorative elements */}
-                <div className="absolute -top-6 -left-6 w-32 h-32 bg-accent-gold/10 rounded-full blur-3xl"></div>
-                <div className="absolute -bottom-6 -right-6 w-40 h-40 bg-primary/10 rounded-full blur-3xl"></div>
+            <div className="relative order-2 lg:order-2">
+              <div className="relative order-2 lg:order-2 flex justify-center lg:justify-start">
 
-                {/* Image container */}
-                <div className="relative rounded-2xl overflow-hidden">
-                  <Image
-                    src="/choose-man1.png"
-                    alt="JRP Impex Company"
-                    width={600}
-                    height={400}
-                    className="w-full h-auto object-cover"
-                  />
-                </div>
+                {/* Floating Image Cluster */}
+                <div className="relative 
+                    w-[260px] h-[260px]
+                    sm:w-[300px] sm:h-[300px]
+                    md:w-[360px] md:h-[360px]
+                    lg:w-[420px] lg:h-[420px]
+                    xl:w-[480px] xl:h-[480px]
+                ">
+                  {/* Main Circle */}
+                  <div className="absolute inset-0 rounded-full  p-3">
 
-                {/* Floating badge */}
-                <div className="absolute -bottom-8 -right-8 bg-white rounded-2xl shadow-lift p-6 max-w-[200px]">
-                  <div className="text-center">
-                    <div className="stat-number--gold text-4xl mb-1">
-                      {companyData.stats.experience}
+                    <div className="relative w-full h-full rounded-full overflow-hidden">
+                      <Image
+                        src="/choose-man1.png"
+                        alt="Global Agro"
+                        fill
+                        className="object-cover"
+                      />
                     </div>
-                    <div className="text-text-muted text-sm font-semibold">
-                      Years of Excellence
+
+                    {/* Top small */}
+                    <div className="
+        absolute
+        -top-4 left-[18%]
+        w-16 h-16
+        sm:w-18 sm:h-18
+        md:w-20 md:h-20
+        lg:w-24 lg:h-24
+        rounded-full
+        bg-white p-1
+      ">
+                      <Image src="/f1.png" alt="" fill className="rounded-full object-cover" />
                     </div>
+
+                    {/* Middle small */}
+                    <div className="
+        absolute
+        top-1/2 -left-5
+        w-18 h-18
+        sm:w-20 sm:h-20
+        md:w-24 md:h-24
+        lg:w-28 lg:h-28
+        -translate-y-1/2
+        rounded-full
+        bg-white p-1
+      ">
+                      <Image src="/f2.png" alt="" fill className="rounded-full object-cover" />
+                    </div>
+
+                    {/* Bottom small */}
+                    <div className="
+        absolute
+        bottom-4 left-[12%]
+        w-16 h-16
+        sm:w-18 sm:h-18
+        md:w-20 md:h-20
+        lg:w-24 lg:h-24
+        rounded-full
+        bg-white p-1
+      ">
+                      <Image src="/f3.png" alt="" fill className="rounded-full object-cover" />
+                    </div>
+
                   </div>
                 </div>
               </div>

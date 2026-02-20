@@ -27,15 +27,29 @@
       "slug": "grains",
       "image": "/grains.jpg",
       "description": "High-quality grains and pulses"
+    },
+    {
+      "id": "seeds",
+      "title": "Seeds",
+      "slug": "seeds",
+      "image": "/seeds.jpg",
+      "description": "Premium quality seeds for culinary and industrial use"
+    },
+    {
+      "id": "dry-fruits",
+      "title": "Dry Fruits",
+      "slug": "dry-fruits",
+      "image": "/dry-fruits.jpg",
+      "description": "Premium quality dry fruits for healthy snacking"
     }
   ],
   "products": [
     {
-      "id": "raw-peanuts",
-      "title": "Raw Peanuts",
+      "id": "Peanut-Kernels",
+      "title": "Peanut Kernels",
       "category": "nuts",
       "slug": "raw-peanuts",
-      "image": "/images/raw-peanuts.jpg",
+      "image": "/images/Peanuts/Peanut Kernels.jpeg",
       "gallery": [
         "/images/raw-peanuts-1.jpg",
         "/images/raw-peanuts-2.jpg",
@@ -59,10 +73,10 @@
     },
     {
       "id": "blanched-peanuts",
-      "title": "Blanched Peanuts",
+      "title": "Blanched Peanut Whole",
       "category": "nuts",
       "slug": "blanched-peanuts",
-      "image": "/images/blanched-peanuts.jpg",
+      "image": "/images/Peanuts/Blanched Peanut Whole.png",
       "gallery": ["/images/blanched-peanuts-1.jpg"],
       "description": "High quality blanched peanuts with skin removed, perfect for snacks and confectionery.",
       "translations": {
@@ -80,11 +94,11 @@
       "origin": "India"
     },
     {
-      "id": "peanut-in-shell",
-      "title": "Peanut In Shell",
+      "id": "Blanched-Peanut-Splits",
+      "title": "Blanched Peanut Splits",
       "category": "nuts",
-      "slug": "peanut-in-shell",
-      "image": "/images/peanut-shell.jpg",
+      "slug": "blanched-peanut-splits",
+      "image": "/images/Peanuts/Blanched Peanut Splits.webp",
       "gallery": ["/images/peanut-shell-1.jpg"],
       "description": "Natural peanuts in shell, ideal for roasting and direct consumption.",
       "translations": {
@@ -102,13 +116,13 @@
       "origin": "India"
     },
     {
-      "id": "turmeric-powder",
-      "title": "Turmeric Powder",
-      "category": "spices",
-      "slug": "turmeric-powder",
-      "image": "/images/turmeric.jpg",
-      "gallery": ["/images/turmeric-1.jpg"],
-      "description": "Pure turmeric powder with high curcumin content and vibrant color.",
+      "id": "Natural-Sesame-Seeds",
+      "title": "Natural Sesame Seeds",
+      "category": "seeds",
+      "slug": "natural-sesame-seeds",
+      "image": "/images/seeds/Natural Sesame Seeds.webp",
+      "gallery": ["/images/sesame-seeds-1.jpg"],
+      "description": "Pure natural sesame seeds with high nutritional value and rich flavor.",
       "translations": {
         "arabic": "مسحوق الكركم",
         "portuguese": "Açafrão em Pó",
@@ -124,13 +138,13 @@
       "origin": "India"
     },
     {
-      "id": "red-chili",
-      "title": "Red Chili",
-      "category": "spices",
-      "slug": "red-chili",
-      "image": "/images/red-chili.jpg",
-      "gallery": ["/images/red-chili-1.jpg"],
-      "description": "Premium quality red chili with excellent heat and color.",
+      "id": "Hulled-Sesame-Seeds",
+      "title": "Hulled Sesame Seeds",
+      "category": "seeds",
+      "slug": "hulled-sesame-seeds",
+      "image": "/images/Seeds/Hulled Sesame Seeds.jpg",
+      "gallery": ["/images/hulled-sesame-seeds-1.jpg"],
+      "description": "Premium quality hulled sesame seeds with high nutritional value.",
       "translations": {
         "arabic": "الفلفل الأحمر",
         "portuguese": "Pimenta Vermelha",
@@ -146,13 +160,13 @@
       "origin": "India"
     },
     {
-      "id": "cumin-seeds",
-      "title": "Cumin Seeds",
-      "category": "spices",
-      "slug": "cumin-seeds",
-      "image": "/images/cumin.jpg",
-      "gallery": ["/images/cumin-1.jpg"],
-      "description": "Aromatic cumin seeds with rich flavor and aroma.",
+      "id": "Black-Sesame-Seeds",
+      "title": "Black Sesame Seeds",
+      "category": "seeds",
+      "slug": "black-sesame-seeds",
+      "image": "/images/Seeds/Black Sesame Seeds.jpg",
+      "gallery": ["/images/black-sesame-seeds-1.jpg"],
+      "description": "Aromatic black sesame seeds with rich flavor and aroma.",
       "translations": {
         "arabic": "بذور الكمون",
         "portuguese": "Sementes de Cominho",
@@ -168,13 +182,13 @@
       "origin": "India"
     },
     {
-      "id": "moringa-powder",
-      "title": "Moringa Powder",
-      "category": "herbs",
-      "slug": "moringa-powder",
-      "image": "/images/moringa.jpg",
-      "gallery": ["/images/moringa-1.jpg"],
-      "description": "Organic moringa powder rich in nutrients and antioxidants.",
+      "id": "Nizamabad Turmeric Fingers",
+      "title": "Nizamabad Turmeric Fingers",
+      "category": "spices",
+      "slug": "Nizamabad-Turmeric-Fingers",
+      "image": "/images/Spices/Nizamabad Turmeric Fingers.jpeg",
+      "gallery": ["/images/Nizamabad Turmeric Fingers-1.jpg"],
+      "description": "Organic turmeric fingers from Nizamabad, rich in nutrients and antioxidants.",
       "translations": {
         "arabic": "مسحوق المورينجا",
         "portuguese": "Pó de Moringa",
@@ -186,13 +200,13 @@
       "origin": "India"
     },
     {
-      "id": "basil-leaves",
-      "title": "Basil Leaves",
-      "category": "herbs",
-      "slug": "basil-leaves",
-      "image": "/images/basil.jpg",
-      "gallery": ["/images/basil-1.jpg"],
-      "description": "Dried basil leaves with fresh aroma and flavor.",
+      "id": "Maharashtra Turmeric Fingers",
+      "title": "Maharashtra Turmeric Fingers",
+      "category": "spices",
+      "slug": "maharashtra-turmeric-fingers",
+      "image": "/images/Spices/Maharashtra Turmeric Fingers.webp",
+      "gallery": ["/images/Maharashtra Turmeric Fingers-1.jpg"],
+      "description": "Organic turmeric fingers from Maharashtra, rich in nutrients and antioxidants.",
       "translations": {
         "arabic": "أوراق الريحان",
         "portuguese": "Folhas de Manjericão",
@@ -204,13 +218,13 @@
       "origin": "India"
     },
     {
-      "id": "basmati-rice",
-      "title": "Basmati Rice",
-      "category": "grains",
-      "slug": "basmati-rice",
-      "image": "/images/basmati.jpg",
-      "gallery": ["/images/basmati-1.jpg"],
-      "description": "Premium aged basmati rice with extra long grains.",
+      "id": "Coriander Seeds",
+      "title": "Coriander Seeds",
+      "category": "seeds",
+      "slug": "coriander-seeds",
+      "image": "/images/Seeds/Coriander Seeds.png",
+      "gallery": ["/images/Coriander Seeds-1.jpg"],
+      "description": "Premium quality coriander seeds with excellent aroma and flavor.",
       "translations": {
         "arabic": "أرز بسمتي",
         "portuguese": "Arroz Basmati",
@@ -226,18 +240,90 @@
       "origin": "India"
     },
     {
-      "id": "chickpeas",
-      "title": "Chickpeas",
-      "category": "grains",
-      "slug": "chickpeas",
-      "image": "/images/chickpeas.jpg",
-      "gallery": ["/images/chickpeas-1.jpg"],
-      "description": "High protein chickpeas, perfect for various cuisines.",
+      "id": "Cumin Seeds",
+      "title": "Cumin Seeds",
+      "category": "seeds",
+      "slug": "cumin-seeds",
+      "image": "/images/seeds/Cumin Seeds.webp",
+      "gallery": ["/images/Cumin Seeds-1.jpg"],
+      "description": "Premium quality cumin seeds with excellent aroma and flavor.",
       "translations": {
         "arabic": "الحمص",
         "portuguese": "Grão de Bico",
         "dutch": "Kikkererwten",
         "spanish": "Garbanzos"
+      },
+      "specifications": ["Protein: 20-22%", "Moisture: Max 12%", "Purity: 99%"],
+      "packaging": "50kg PP Bags",
+      "origin": "India"
+    },
+    {
+      "id": "Desi-Chana-(Chickpeas)",
+      "title": "Desi Chana (Chickpeas)",
+      "category": "grains",
+      "slug": "desi-chana-chickpeas",
+      "image": "/images/Grains/Desi Chana (Chickpeas).jpg",
+      "gallery": ["/images/Desi Chana (Chickpeas)-1.jpg"],
+      "description": "Premium quality desi chana (chickpeas) with excellent aroma and flavor.",
+      "translations": {
+        "arabic": "الحمص",
+        "portuguese": "Grão de Bico",
+        "dutch": "Kikkererwten",
+        "spanish": "Garbanzos"
+      },
+      "specifications": ["Protein: 20-22%", "Moisture: Max 12%", "Purity: 99%"],
+      "packaging": "50kg PP Bags",
+      "origin": "India"
+    },
+    {
+      "id": "Mazafati-Dates",
+      "title": "Mazafati Dates",
+      "category": "dry-fruits",
+      "slug": "mazafati-dates",
+      "image": "/images/dry-fruits/Mazafati Dates.jpg",
+      "gallery": ["/images/dry-fruits/Mazafati Dates-1.jpg"],
+      "description": "Premium quality mazafati dates with excellent aroma and flavor.",
+      "translations": {
+        "arabic": "الحمص",
+        "portuguese": "Grão de Bico",
+        "dutch": "Kikkererwten",
+        "spanish": "Garbanzos"
+      },
+      "specifications": ["Protein: 20-22%", "Moisture: Max 12%", "Purity: 99%"],
+      "packaging": "50kg PP Bags",
+      "origin": "India"
+    },
+    {
+      "id": "Mamra Almond",
+      "title": "Mamra Almond",
+      "category": "dry-fruits",
+      "slug": "mamra-almond",
+      "image": "/images/dry-fruits/Mamra Almond.jpg",
+      "gallery": ["/images/dry-fruits/Mamra Almond-1.jpg"],
+      "description": "Premium quality mamra almond with excellent aroma and flavor.",
+      "translations": {
+        "arabic": "لوز مامرا",
+        "portuguese": "Amêndoa Mamra",
+        "dutch": "Mamra Noten",
+        "spanish": "Almendras Mamra"
+      },
+      "specifications": ["Protein: 20-22%", "Moisture: Max 12%", "Purity: 99%"],
+      "packaging": "50kg PP Bags",
+      "origin": "India"
+    },
+    {
+      "id": "Pistachio Kernels",
+      "title": "Pistachio Kernels",
+      "category": "dry-fruits",
+      "slug": "pistachio-kernels",
+      "image": "/images/dry-fruits/Pistachio Kernels.jfif",
+      "gallery": ["/images/dry-fruits/Pistachio Kernels-1.jpg"],
+      "description": "Premium quality pistachio kernels with excellent aroma and flavor.",
+      "translations": {
+        "arabic": "مكسرات الفستق",
+        "portuguese": "Núcleos de Pistácio",
+        "dutch": "Pistachio Kernels",
+        "spanish": "Núcleos de Pistacho"
       },
       "specifications": ["Protein: 20-22%", "Moisture: Max 12%", "Purity: 99%"],
       "packaging": "50kg PP Bags",

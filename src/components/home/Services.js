@@ -25,11 +25,23 @@ export default function Services() {
         </div>
 
         {/* ── Services Grid ───────────────────────────────── */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-7 items-stretch">
+        <div className="flex flex-wrap justify-center gap-7">
           {servicesData.services.map((service, index) => (
             <div
               key={service.id}
-              className="group relative flex flex-col bg-white rounded-sm overflow-visible shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-lift)] hover:-translate-y-1.5 hover:border-[var(--color-accent-gold)] transition-all duration-300 border-2 border-[var(--color-border)]"
+                    className="group relative flex flex-col 
+                 w-full
+                 md:w-[calc(50%-14px)]
+                 lg:w-[calc(33.333%-18.7px)]
+                 max-w-md
+                 bg-white rounded-sm overflow-visible 
+                 shadow-[var(--shadow-card)] 
+                 hover:shadow-[var(--shadow-lift)] 
+                 hover:-translate-y-1.5 
+                 hover:border-[var(--color-accent-gold)] 
+                 transition-all duration-300 
+                 border-2 border-[var(--color-border)]"
+
             >
               {/* ── Image ─────────────────────────────────── */}
               <div className="relative h-56 overflow-hidden rounded-t-sm flex-shrink-0">
@@ -42,13 +54,6 @@ export default function Services() {
 
                 {/* Gradient overlay bottom */}
                 <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[var(--color-primary-dark)]/70 to-transparent" />
-
-                {/* Index number — top right */}
-                <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-[var(--color-accent-gold)] flex items-center justify-center shadow-md z-10">
-                  <span className="text-[var(--color-primary-dark)] text-xs font-black font-[var(--font-body)] leading-none">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                </div>
               </div>
 
               {/* ── Icon Badge — sits between image and content ── */}

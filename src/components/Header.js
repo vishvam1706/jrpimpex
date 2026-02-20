@@ -39,13 +39,13 @@ export default function Header() {
   return (
     <>
       {/* ── Top Info Bar ───────────────────────────────────────── */}
-      <div className="bg-[var(--color-accent-gold)] text-[var(--color-primary-dark)]">
+      <div className="bg-[var(--color-accent-gold)] lg:block hidden text-[var(--color-primary-dark)]">
         <div className="container-custom py-2.5">
           <div className="flex flex-wrap items-center justify-between gap-3">
             {/* Address */}
             <span className="flex items-center gap-2 p-2 text-sm">
               <MapPin className="w-[15px] h-[15px] shrink-0" />
-              {companyData.contact.address}
+              {companyData.contact.address?.slice(0, 95)}...
             </span>
             {/* Phone + Email */}
             <div className="flex items-center gap-5 p-2 text-sm">

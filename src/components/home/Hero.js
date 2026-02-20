@@ -21,7 +21,7 @@ function ChevronDouble() {
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden min-h-[88vh] flex items-center">
+    <section className="relative overflow-hidden min-h-[88vh] flex">
 
       {/* Background image */}
       <Image
@@ -37,7 +37,7 @@ export default function Hero() {
 
       {/* Content */}
       <div className="container-custom relative z-10 w-full py-16 lg:py-24">
-        <div className="grid lg:grid-cols-2 gap-10 xl:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 xl:gap-16 items-center">
 
           {/* LEFT */}
           <div className="text-white">
@@ -86,42 +86,90 @@ export default function Hero() {
           </div>
 
           {/* RIGHT */}
-          <div className="relative hidden lg:flex items-center justify-center h-[520px]">
+          <div className="relative flex items-center justify-center 
+                h-[360px] sm:h-[420px] md:h-[480px] lg:h-[520px]">
 
             {/* Outer ring */}
-            <div className="absolute w-[480px] h-[480px] rounded-full border-2 border-dashed border-white/20 animate-spin-slow" />
+            <div className="absolute 
+                  w-[280px] h-[280px]
+                  sm:w-[340px] sm:h-[340px]
+                  md:w-[400px] md:h-[400px]
+                  lg:w-[480px] lg:h-[480px]
+                  rounded-full border-2 border-dashed border-white/20 
+                  animate-spin-slow" />
 
-            {/* Middle ring */}
-            <div className="absolute w-[400px] h-[400px] rounded-full border border-[var(--color-accent-gold)]/30 animate-spin-slow-reverse" />
+            {/* Middle ring with orbit dots */}
+            <div className="absolute
+  w-[220px] h-[220px]
+  sm:w-[280px] sm:h-[280px]
+  md:w-[340px] md:h-[340px]
+  lg:w-[400px] lg:h-[400px]
+  rounded-full border border-[var(--color-accent-gold)]/30 
+  animate-spin-slow-reverse
+">
 
-            {/* Dots */}
-            <div className="absolute w-[480px] h-[480px] animate-spin-slow">
               {[0, 90, 180, 270].map((deg) => (
                 <div
                   key={deg}
-                  className="absolute w-3 h-3 rounded-full bg-[var(--color-accent-gold)] shadow-[0_0_8px_rgba(212,175,55,0.8)] top-1/2 left-1/2"
+                  className="absolute top-1/2 left-1/2"
                   style={{
-                    transform: `rotate(${deg}deg) translateY(-240px) translateX(-50%)`,
+                    transform: `
+          rotate(${deg}deg)
+          translateY(-50%)
+        `,
                   }}
-                />
+                >
+                  <div className="
+        w-2 h-2 sm:w-3 sm:h-3
+        rounded-full
+        bg-[var(--color-accent-gold)]
+        shadow-[0_0_12px_rgba(212,175,55,0.9)]
+        -translate-y-[110px]
+        sm:-translate-y-[140px]
+        md:-translate-y-[170px]
+        lg:-translate-y-[200px]
+      " />
+                </div>
               ))}
+
             </div>
 
             {/* Glow */}
-            <div className="absolute w-80 h-80 rounded-full bg-[var(--color-accent-gold)]/15 blur-3xl" />
-            <div className="absolute w-64 h-64 rounded-full bg-[var(--color-primary-light)]/20 blur-2xl" />
+            <div className="absolute 
+                  w-44 h-44 
+                  sm:w-56 sm:h-56 
+                  md:w-72 md:h-72 
+                  lg:w-80 lg:h-80
+                  rounded-full bg-[var(--color-accent-gold)]/15 blur-3xl" />
 
-            {/* ROTATING IMAGE */}
-            <div className="relative w-[340px] h-[340px] animate-spin-slow">
-              <div className="w-full h-full rounded-full overflow-hidden border-4 border-white/30 shadow-[0_0_60px_rgba(0,0,0,0.5)] animate-spin-slow-reverse">
+            <div className="absolute 
+                  w-36 h-36 
+                  sm:w-48 sm:h-48 
+                  md:w-56 md:h-56 
+                  lg:w-64 lg:h-64
+                  rounded-full bg-[var(--color-primary-light)]/20 blur-2xl" />
+
+            {/* Rotating Image */}
+            <div className="relative
+                  w-[180px] h-[180px]
+                  sm:w-[220px] sm:h-[220px]
+                  md:w-[280px] md:h-[280px]
+                  lg:w-[340px] lg:h-[340px]">
+              <div className="w-full h-full rounded-full overflow-hidden 
+                    border-4 border-white/30 
+                    shadow-[0_0_60px_rgba(0,0,0,0.5)]">
                 <Image
                   src="/hero3.png"
                   alt="JRP Impex Products"
                   fill
-                  className="object-cover"
+                  className="object-cover animate-spin [animation-duration:10s]"
                   priority
                 />
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-transparent via-transparent to-[var(--color-primary-dark)]/20" />
+                <div className="absolute inset-0 rounded-full 
+                      bg-gradient-to-br 
+                      from-transparent 
+                      via-transparent 
+                      to-[var(--color-primary-dark)]/20" />
               </div>
             </div>
 
