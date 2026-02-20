@@ -67,7 +67,7 @@ export default function Hero() {
             <Link
               href="/products"
               className="inline-flex items-center gap-2 px-8 py-3.5
-                         bg-[var(--color-accent-green)] text-white
+                         bg-[var(--color-primary-dark)] text-white
                          text-base font-semibold rounded-full
                          hover:bg-[var(--color-primary-light)] hover:-translate-y-px
                          hover:shadow-[0_8px_28px_rgba(45,153,99,.45)]

@@ -254,28 +254,28 @@ export default function ProductDetailPage() {
                         <div className="bg-[var(--color-primary-muted)] rounded-xl p-4 mb-5">
                           <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[var(--color-primary)] mb-3">Also Known As</p>
                           <div className="space-y-2">
-                            {product.translations.arabic && (
+                            {(product.translations.Arabic || product.translations.arabic) && (
                               <div className="flex items-start gap-2 text-sm">
                                 <span className="font-bold text-[var(--color-primary)] w-[80px] flex-shrink-0">Arabic:</span>
-                                <span className="text-[var(--color-text-base)]">{product.translations.arabic}</span>
+                                <span className="text-[var(--color-text-base)]">{product.translations.Arabic || product.translations.arabic}</span>
                               </div>
                             )}
-                            {product.translations.portuguese && (
+                            {(product.translations.Portuguese || product.translations.portuguese) && (
                               <div className="flex items-start gap-2 text-sm">
                                 <span className="font-bold text-[var(--color-primary)] w-[80px] flex-shrink-0">Portuguese:</span>
-                                <span className="text-[var(--color-text-base)]">{product.translations.portuguese}</span>
+                                <span className="text-[var(--color-text-base)]">{product.translations.Portuguese || product.translations.portuguese}</span>
                               </div>
                             )}
-                            {product.translations.dutch && (
+                            {(product.translations.Dutch || product.translations.dutch) && (
                               <div className="flex items-start gap-2 text-sm">
                                 <span className="font-bold text-[var(--color-primary)] w-[80px] flex-shrink-0">Dutch:</span>
-                                <span className="text-[var(--color-text-base)]">{product.translations.dutch}</span>
+                                <span className="text-[var(--color-text-base)]">{product.translations.Dutch || product.translations.dutch}</span>
                               </div>
                             )}
-                            {product.translations.spanish && (
+                            {(product.translations.Spanish || product.translations.spanish) && (
                               <div className="flex items-start gap-2 text-sm">
                                 <span className="font-bold text-[var(--color-primary)] w-[80px] flex-shrink-0">Spanish:</span>
-                                <span className="text-[var(--color-text-base)]">{product.translations.spanish}</span>
+                                <span className="text-[var(--color-text-base)]">{product.translations.Spanish || product.translations.spanish}</span>
                               </div>
                             )}
                           </div>
@@ -316,7 +316,7 @@ export default function ProductDetailPage() {
 
                 {/* Tab bar */}
                 <div className="flex border-b border-[var(--color-border-light)] bg-[var(--color-surface-warm)]/60">
-                  {["description", "specifications"].map((tab) => (
+                  {["description", "specifications", "tags"].filter(tab => tab !== 'tags' || product.sections?.Tags).map((tab) => (
                     <button
                       key={tab}
                       onClick={() => setActiveTab(tab)}
@@ -336,16 +336,24 @@ export default function ProductDetailPage() {
                 {/* Tab content */}
                 <div className="p-6 lg:p-8">
                   {activeTab === "description" && (
-                    <div>
+                    <div className="space-y-4">
                       <div className="flex items-center gap-3 mb-5">
                         <div className="w-1 h-8 bg-gradient-to-b from-[var(--color-accent-gold)] to-[var(--color-accent-gold-lt)] rounded-full" />
                         <h3 className="text-xl lg:text-2xl font-bold text-[var(--color-primary-dark)] font-heading">
                           Product Description
                         </h3>
                       </div>
-                      <p className="text-[var(--color-text-muted)] text-base lg:text-lg leading-relaxed">
-                        {product.description}
-                      </p>
+                      {product.sections?.Description ? (
+                        product.sections.Description.map((para, idx) => (
+                          <p key={idx} className="text-[var(--color-text-muted)] text-base lg:text-lg leading-relaxed">
+                            {para}
+                          </p>
+                        ))
+                      ) : (
+                        <p className="text-[var(--color-text-muted)] text-base lg:text-lg leading-relaxed">
+                          {product.description}
+                        </p>
+                      )}
                     </div>
                   )}
 
@@ -384,6 +392,29 @@ export default function ProductDetailPage() {
                           <p className="text-[var(--color-text-muted)] text-sm">No specifications available for this product.</p>
                         </div>
                       )}
+                    </div>
+                  )}
+
+                  {activeTab === "tags" && product.sections?.Tags && (
+                    <div>
+                      <div className="flex items-center gap-3 mb-5">
+                        <div className="w-1 h-8 bg-gradient-to-b from-[var(--color-accent-gold)] to-[var(--color-accent-gold-lt)] rounded-full" />
+                        <h3 className="text-xl lg:text-2xl font-bold text-[var(--color-primary-dark)] font-heading">
+                          Product Tags
+                        </h3>
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        {product.sections.Tags.flatMap(tag => tag.split(',')).map((tag, index) => (
+                          tag.trim() && (
+                            <span
+                              key={index}
+                              className="px-4 py-2 rounded-full bg-[var(--color-primary-muted)] text-[var(--color-primary)] text-sm font-medium border border-[var(--color-border-light)] hover:border-[var(--color-accent-gold)] transition-all duration-300"
+                            >
+                              {tag.trim()}
+                            </span>
+                          )
+                        ))}
+                      </div>
                     </div>
                   )}
                 </div>

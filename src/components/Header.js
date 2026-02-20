@@ -131,18 +131,11 @@ export default function Header() {
                 </div>
               </div>
 
-              {/* Search button — round green */}
-              <button
-                aria-label="Search"
-                className="ml-2 flex items-center justify-center w-10 h-10 rounded-full bg-[var(--color-primary-muted)] text-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-white transition-all duration-200"
-              >
-                <Search className="w-[18px] h-[18px]" />
-              </button>
 
               {/* Get A Quote — pill green */}
               <Link
                 href="/contact"
-                className="ml-2 inline-flex items-center gap-2 px-6 py-2.5 bg-[var(--color-accent-green)] text-white text-[15px] rounded-full hover:bg-[var(--color-accent-gold)] transition-colors duration-200 group hover:text-[var(--color-primary-dark)]"
+                className="ml-2 inline-flex items-center gap-2 px-6 py-2.5 bg-[var(--color-primary-dark)] text-white text-[15px] rounded-full hover:bg-[var(--color-accent-gold)] transition-colors duration-200 group hover:text-[var(--color-primary-dark)]"
               >
                 Get A Quote
                 <svg
@@ -238,7 +231,7 @@ export default function Header() {
           <Link
             href="/contact"
             onClick={() => setMobileOpen(false)}
-            className="flex items-center justify-center gap-2 w-full py-3 bg-[var(--color-accent-green)] text-white text-sm font-semibold rounded-full hover:bg-[var(--color-primary)] transition-colors"
+            className="flex items-center justify-center gap-2 w-full py-3 bg-[var(--color-primary-dark)] text-white text-sm font-semibold rounded-full hover:bg-[var(--color-primary)] transition-colors"
           >
             Get A Quote
             <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

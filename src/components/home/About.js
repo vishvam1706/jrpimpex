@@ -107,7 +107,7 @@ export default function About() {
             {/* CTA */}
             <Link
               href="/about"
-              className="inline-flex items-center gap-2 px-7 py-3.5 bg-[var(--color-accent-green)] text-white text-xs font-black uppercase tracking-widest rounded-sm font-[var(--font-body)] border-2 border-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] hover:border-[var(--color-primary-dark)] hover:shadow-lg hover:-translate-y-px transition-all duration-200 group"
+              className="inline-flex items-center gap-2 px-7 py-3.5 bg-[var(--color-primary-dark)] text-white text-xs font-black uppercase tracking-widest rounded-sm font-[var(--font-body)] border-2 border-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] hover:border-[var(--color-primary-dark)] hover:shadow-lg hover:-translate-y-px transition-all duration-200 group"
             >
               Discover Our Story
               <svg
