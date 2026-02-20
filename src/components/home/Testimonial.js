@@ -152,7 +152,8 @@ export default function Testimonial() {
             <div className="relative overflow-hidden aspect-square w-full ">
               <Image
                 src="/Testimonial.png"
-                alt="Farming"
+                alt="Large scale sustainable mustard farming"
+                role="presentation"
                 fill
                 className="object-cover"
               />

@@ -79,10 +79,10 @@ export default function Header() {
           <div className={`flex items-center justify-between transition-all duration-300 ${scrolled ? "py-3" : "py-4"}`}>
 
             {/* Logo */}
-            <Link href="/" aria-label="JRP Impex — Home">
+            <Link href="/" aria-label="Akshar Exports — Home">
               <Image
                 src="/logo.png"
-                alt="JRP Impex"
+                alt="Akshar Exports"
                 width={180}
                 height={72}
                 className={`w-auto transition-all duration-300 ${scrolled ? "h-22" : "h-23"}`}
@@ -177,7 +177,7 @@ export default function Header() {
       >
         {/* Drawer header */}
         <div className="flex items-center justify-between px-5 py-4 bg-[var(--color-primary)] shrink-0">
-          <Image src="/logo.png" alt="JRP Impex" width={120} height={48} className="h-9 w-auto brightness-0 invert" />
+          <Image src="/logo.png" alt="Akshar Exports" width={120} height={48} className="h-9 w-auto brightness-0 invert" />
           <button
             onClick={() => setMobileOpen(false)}
             className="flex items-center justify-center w-8 h-8 rounded-full border border-white/20 text-white/70 hover:bg-white/10 hover:text-white transition-colors"

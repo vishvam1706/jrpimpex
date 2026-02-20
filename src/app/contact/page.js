@@ -2,8 +2,10 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
+import Image from "next/image";
+import { Mail, Phone, MapPin, Clock, Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 import companyData from "@/data/company.json";
+import { sendEmail } from "../actions/sendEmail";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -14,6 +16,9 @@ export default function ContactPage() {
     message: "",
   });
 
+  const [status, setStatus] = useState("idle"); // idle, loading, success, error
+  const [errorMessage, setErrorMessage] = useState("");
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -21,26 +26,50 @@ export default function ContactPage() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission
-    console.log("Form submitted:", formData);
-    alert("Thank you for your message! We will get back to you soon.");
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      subject: "",
-      message: "",
-    });
+    setStatus("loading");
+    setErrorMessage("");
+
+    try {
+      const result = await sendEmail(formData);
+      if (result.success) {
+        setStatus("success");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          subject: "",
+          message: "",
+        });
+      } else {
+        setStatus("error");
+        setErrorMessage(result.error || "Something went wrong. Please try again.");
+      }
+    } catch (err) {
+      setStatus("error");
+      setErrorMessage("Failed to send message. Please check your connection.");
+    }
   };
 
   return (
     <>
       {/* Premium Breadcrumb Hero */}
       <section className="relative gradient-hero py-24 lg:py-32 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/contact-bg.png"
+            alt="Contact Akshar Exports"
+            fill
+            priority
+            className="object-cover object-center opacity-40"
+          />
+          <div className="absolute inset-0 bg-primary-dark/60 blend-multiply"></div>
+        </div>
+
         {/* Animated background pattern */}
-        <div className="absolute inset-0 opacity-[0.07]">
+        <div className="absolute inset-0 opacity-[0.1] z-1">
           <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <pattern
@@ -235,6 +264,20 @@ export default function ContactPage() {
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  {status === "success" && (
+                    <div className="flex items-center gap-3 bg-emerald-50 border border-emerald-100 text-emerald-700 px-5 py-4 rounded-lg animate-in fade-in slide-in-from-top-2 duration-300">
+                      <CheckCircle className="w-5 h-5 shrink-0" />
+                      <p className="text-sm font-medium">Thank you! Your message has been sent successfully.</p>
+                    </div>
+                  )}
+
+                  {status === "error" && (
+                    <div className="flex items-center gap-3 bg-red-50 border border-red-100 text-red-700 px-5 py-4 rounded-lg animate-in fade-in slide-in-from-top-2 duration-300">
+                      <AlertCircle className="w-5 h-5 shrink-0" />
+                      <p className="text-sm font-medium">{errorMessage}</p>
+                    </div>
+                  )}
+
                   <div>
                     <label
                       htmlFor="name"
@@ -334,10 +377,20 @@ export default function ContactPage() {
 
                   <button
                     type="submit"
-                    className="btn-primary w-full justify-center group"
+                    disabled={status === "loading"}
+                    className="btn-primary w-full justify-center group disabled:opacity-70 disabled:cursor-not-allowed"
                   >
-                    <Send className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
-                    <span>Send Message</span>
+                    {status === "loading" ? (
+                      <>
+                        <Loader2 className="w-5 h-5 animate-spin" />
+                        <span>Sending...</span>
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
+                        <span>Send Message</span>
+                      </>
+                    )}
                   </button>
                 </form>
 

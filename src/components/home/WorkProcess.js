@@ -160,7 +160,8 @@ export default function WorkProcess() {
         <div className="relative w-full h-24 md:h-32">
           <Image
             src="/green-area.png"
-            alt="Green area decoration"
+            alt="Sustainable green agricultural landscape"
+            role="presentation"
             fill
             quality={100}
             className="object-contain object-bottom w-full"

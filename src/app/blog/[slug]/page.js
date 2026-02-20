@@ -1,8 +1,9 @@
 "use client";
 
+import { use, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Calendar, Clock, Tag, ArrowLeft, Share2, Twitter, Linkedin, Facebook } from "lucide-react";
+import { ArrowRight, Calendar, Clock, Tag, ArrowLeft, Share2, Twitter, Linkedin, Facebook, Check } from "lucide-react";
 import blogsData from "@/data/blogs";
 import { notFound } from "next/navigation";
 
@@ -12,9 +13,25 @@ import { notFound } from "next/navigation";
 
 // For demo purposes, using first post
 export default function BlogDetailPage({ params }) {
-  const post = blogsData.posts.find((p) => p.slug === params?.slug) ?? blogsData.posts[0];
+  const { slug } = use(params);
+  const post = blogsData.posts.find((p) => p.slug === slug) ?? blogsData.posts[0];
+  const [copied, setCopied] = useState(false);
 
   if (!post) return notFound();
+
+  const shareUrl = typeof window !== "undefined" ? window.location.href : `https://akshar-exports.com/blog/${post.slug}`;
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(shareUrl);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  const shareLinks = {
+    Twitter: `https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(post.title)}`,
+    Linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`,
+    Facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`,
+  };
 
   const relatedPosts = blogsData.posts
     .filter((p) => p.category === post.category && p.id !== post.id)
@@ -180,7 +197,7 @@ export default function BlogDetailPage({ params }) {
                   <div className="flex items-center gap-3 mt-5">
                     <div className="w-8 h-[2px] bg-[var(--color-accent-gold)]" />
                     <span className="text-[var(--color-accent-gold)] text-xs font-bold uppercase tracking-[0.2em] font-[var(--font-body)]">
-                      JRP Impex Philosophy
+                      Akshar Exports Philosophy
                     </span>
                   </div>
                 </div>
@@ -189,7 +206,7 @@ export default function BlogDetailPage({ params }) {
                   Key Takeaways for Exporters
                 </h2>
                 <p className="text-base leading-[1.9]">
-                  Successful agro exporters consistently share several characteristics: they maintain rigorous quality control processes, invest in eco-friendly packaging, build transparent supply chains, and nurture long-term partnerships with both farmers and international buyers. At JRP Impex, these principles are embedded into every step of our operations.
+                  Successful agro exporters consistently share several characteristics: they maintain rigorous quality control processes, invest in eco-friendly packaging, build transparent supply chains, and nurture long-term partnerships with both farmers and international buyers. At Akshar Exports, these principles are embedded into every step of our operations.
                 </p>
 
                 {/* Highlight boxes */}
@@ -240,23 +257,31 @@ export default function BlogDetailPage({ params }) {
                   </div>
                   <div className="flex items-center gap-3">
                     {[
-                      { Icon: Twitter, label: "Twitter", color: "hover:bg-sky-500" },
-                      { Icon: Linkedin, label: "LinkedIn", color: "hover:bg-blue-600" },
-                      { Icon: Facebook, label: "Facebook", color: "hover:bg-blue-700" },
-                    ].map(({ Icon, label, color }) => (
-                      <button
+                      { Icon: Twitter, label: "Twitter", color: "hover:bg-sky-500", link: shareLinks.Twitter },
+                      { Icon: Linkedin, label: "Linkedin", color: "hover:bg-blue-600", link: shareLinks.Linkedin },
+                      { Icon: Facebook, label: "Facebook", color: "hover:bg-blue-700", link: shareLinks.Facebook },
+                    ].map(({ Icon, label, color, link }) => (
+                      <a
                         key={label}
+                        href={link}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         aria-label={`Share on ${label}`}
                         className={`w-10 h-10 rounded-full border-2 border-[var(--color-border)] flex items-center justify-center text-[var(--color-text-muted)] ${color} hover:text-white hover:border-transparent transition-all duration-300`}
                       >
                         <Icon className="w-4 h-4" />
-                      </button>
+                      </a>
                     ))}
                     <button
+                      onClick={copyToClipboard}
                       aria-label="Copy link"
-                      className="w-10 h-10 rounded-full border-2 border-[var(--color-border)] flex items-center justify-center text-[var(--color-text-muted)] hover:bg-[var(--color-primary)] hover:text-white hover:border-transparent transition-all duration-300"
+                      className={`w-10 h-10 rounded-full border-2 border-[var(--color-border)] flex items-center justify-center transition-all duration-300 ${
+                        copied 
+                          ? "bg-[var(--color-accent-green)] border-transparent text-white" 
+                          : "text-[var(--color-text-muted)] hover:bg-[var(--color-primary)] hover:text-white hover:border-transparent"
+                      }`}
                     >
-                      <Share2 className="w-4 h-4" />
+                      {copied ? <Check className="w-4 h-4" /> : <Share2 className="w-4 h-4" />}
                     </button>
                   </div>
                 </div>
@@ -287,7 +312,7 @@ export default function BlogDetailPage({ params }) {
                         {post.author.name}
                       </p>
                       <p className="text-white/60 text-sm font-[var(--font-body)]">
-                        {post.author.role} · JRP Impex
+                        {post.author.role} · Akshar Exports
                       </p>
                     </div>
                   </div>
@@ -328,7 +353,7 @@ export default function BlogDetailPage({ params }) {
                     </span>
                   </div>
                   <h3 className="font-[var(--font-heading)] font-bold text-white text-lg relative z-10">
-                    JRP Impex Blog
+                    Akshar Exports Blog
                   </h3>
                 </div>
                 <div className="p-5 bg-white">
@@ -432,7 +457,7 @@ export default function BlogDetailPage({ params }) {
                   </div>
                   <h3 className="font-[var(--font-heading)] font-bold text-white text-xl mb-3 leading-snug">
                     Ready to Export
-                    <span className="block text-[var(--color-accent-gold)]">with JRP?</span>
+                    <span className="block text-[var(--color-accent-gold)]">with Akshar?</span>
                   </h3>
                   <div className="w-8 h-[2px] bg-gradient-to-r from-[var(--color-accent-gold)] to-[var(--color-accent-gold-lt)] mx-auto mb-4" />
                   <p className="text-white/65 text-xs font-[var(--font-body)] leading-relaxed mb-6">

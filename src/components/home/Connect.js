@@ -63,7 +63,7 @@ export default function Connect() {
               {/* Farmer image */}
               <Image
                 src="/sub.png"
-                alt="Connect with JRP Impex"
+                alt="Connect with Akshar Exports"
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -118,7 +118,7 @@ export default function Connect() {
                 <div className="w-12 h-[3px] bg-gradient-to-r from-[var(--color-accent-gold)] to-[var(--color-accent-gold-lt)] rounded-full mb-6" />
 
                 <p className="text-white/60 text-base font-[var(--font-body)] leading-relaxed mb-8 max-w-sm">
-                  Partner with JRP Impex for a seamless, world-class agro
+                  Partner with Akshar Exports for a seamless, world-class agro
                   sourcing experience quality guaranteed, delivery trusted.
                 </p>
 

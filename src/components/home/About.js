@@ -32,7 +32,7 @@ export default function About() {
             <div className="relative">
               <Image
                 src="/about1.png"
-                alt="JRP Impex Warehouse"
+                alt="Akshar Exports Warehouse"
                 width={600}
                 height={500}
                 className="w-full h-auto object-cover"
@@ -49,7 +49,7 @@ export default function About() {
             <div className="flex items-center gap-3 mb-4">
               <div className="w-8 h-[2px] bg-[var(--color-primary-light)]" />
               <span className="text-[var(--color-primary-light)] text-xs font-bold uppercase tracking-[0.2em] font-[var(--font-body)]">
-                Welcome to JRP Impex
+                Welcome to Akshar Exports
               </span>
             </div>
 
@@ -65,7 +65,7 @@ export default function About() {
 
             {/* Body copy */}
             <p className="text-[var(--color-text-muted)] text-base md:text-lg font-[var(--font-body)] leading-relaxed mb-8">
-              JRP Impex stands at the forefront of international agro trade,
+              Akshar Exports stands at the forefront of international agro trade,
               delivering premium agricultural products across the globe. Backed
               by over ten years of expertise, we are committed to quality,
               sustainability, and reliability in every shipment.

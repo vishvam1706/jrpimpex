@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+
 const FEATURES = [
   "Harvesting Trust, Shipping Quality",
   "From India's Soil to the World's Table",
@@ -26,7 +27,8 @@ export default function Hero() {
       {/* Background image */}
       <Image
         src="/images/hero-bg.jpg"
-        alt=""
+        alt="Premium agricultural products and spices background"
+        role="presentation"
         fill
         priority
         className="object-cover object-center"
@@ -51,7 +53,7 @@ export default function Hero() {
             <div className="w-52 h-[3px] bg-[var(--color-accent-green)] rounded-full mb-7" />
 
             <p className="text-white/80 text-base md:text-lg leading-relaxed mb-6 max-w-lg">
-              Choose JRP Impex for agro products that meet the highest
+              Choose Akshar Exports for agro products that meet the highest
               international standards.
             </p>
 
@@ -65,7 +67,7 @@ export default function Hero() {
             </ul>
 
             <Link
-              href="/products"
+              href="/about"
               className="inline-flex items-center gap-2 px-8 py-3.5
                          bg-[var(--color-primary-dark)] text-white
                          text-base font-semibold rounded-full
@@ -160,7 +162,7 @@ export default function Hero() {
                     shadow-[0_0_60px_rgba(0,0,0,0.5)]">
                 <Image
                   src="/hero3.png"
-                  alt="JRP Impex Products"
+                  alt="Assortment of Akshar Exports agricultural products"
                   fill
                   className="object-cover animate-spin [animation-duration:10s]"
                   priority

@@ -55,7 +55,7 @@ export default function Footer() {
             <Link href="/" className="inline-block mb-5">
               <Image
                 src="/logo.png"
-                alt="JRP Impex"
+                alt="Akshar Exports"
                 width={150}
                 height={60}
                 className="h-11 w-auto brightness-0 invert"
@@ -229,7 +229,7 @@ export default function Footer() {
         {/* ── Bottom bar ───────────────────────────────────── */}
         <div className="border-t border-white/8 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-white/30 text-xs font-[var(--font-body)] tracking-wide">
-            © JRP Impex 2025. All Rights Reserved. Developed by VD
+            © Akshar Exports 2025. All Rights Reserved. Developed by VD
           </p>
 
           <div className="flex items-center gap-6">

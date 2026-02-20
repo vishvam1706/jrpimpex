@@ -1,14 +1,26 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect, Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { ArrowRight, Calendar, Clock, Tag, Search, X } from "lucide-react";
 import blogsData from "@/data/blogs";
 
-export default function BlogPage() {
+function BlogPageContent() {
+  const searchParams = useSearchParams();
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
+
+  // Update selected category if URL changes
+  useEffect(() => {
+    const category = searchParams.get("category");
+    if (category && blogsData.categories.some(c => c.id === category)) {
+      setSelectedCategory(category);
+    } else {
+      setSelectedCategory("all");
+    }
+  }, [searchParams]);
 
   const filteredPosts = useMemo(() => {
     return blogsData.posts.filter((post) => {
@@ -82,7 +94,7 @@ export default function BlogPage() {
             </h1>
             <p className="text-lg text-white/80 mb-8 max-w-xl mx-auto font-[var(--font-body)] leading-relaxed">
               Agro expertise, export insights, and sustainability stories from
-              the JRP Impex team.
+              the Akshar Exports team.
             </p>
             <div className="flex items-center justify-center gap-3 text-white/90">
               <Link
@@ -479,5 +491,13 @@ export default function BlogPage() {
         </div>
       </section>
     </>
+  );
+}
+
+export default function BlogPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen pt-32 text-center">Loading Articles...</div>}>
+      <BlogPageContent />
+    </Suspense>
   );
 }

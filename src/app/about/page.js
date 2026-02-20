@@ -5,21 +5,55 @@ import servicesData from "@/data/services.json";
 import Testimonial from "@/components/home/Testimonial";
 
 export const metadata = {
-  title: "About Us - JRP Impex",
+  title: "About Us | Akshar Exports | Trusted Agro Exporter Since 2014",
   description:
-    "Learn more about JRP Impex and our commitment to quality agricultural products.",
+    "Learn about Akshar Exports — a trusted Indian exporter of premium agricultural products. 10+ years experience serving 50+ countries with certified agro commodities.",
+  alternates: {
+    canonical: "/about",
+  },
+  openGraph: {
+    title: "About Us | Akshar Exports | Trusted Agro Exporter Since 2014",
+    description:
+      "10+ years of experience exporting premium agricultural products from India to 50+ countries. Committed to quality and integrity in global agro trade.",
+    url: "https://akshar-exports.com/about",
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://akshar-exports.com",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "About Us",
+      item: "https://akshar-exports.com/about",
+    },
+  ],
 };
 
 export default function AboutPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
       {/* Premium Breadcrumb Hero */}
       <section className="relative gradient-hero py-24 lg:py-32 overflow-hidden">
         {/* ── Full background image ─────────────────────────── */}
         <div className="absolute inset-0">
           <Image
             src="/about_us.jpg"
-            alt="About JRP Impex"
+            alt="About Akshar Exports"
             fill
             className="object-cover object-center"
             priority
@@ -63,7 +97,7 @@ export default function AboutPage() {
               Our Story
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 font-heading">
-              About JRP Impex
+              About Akshar Exports
             </h1>
             <div className="flex items-center justify-center gap-3 text-white/90">
               <Link
@@ -111,7 +145,7 @@ export default function AboutPage() {
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="order-1 lg:order-1">
-              <span className="section-label text-[var(--color-accent-green)]">About JRP IMPEX</span>
+              <span className="section-label text-[var(--color-accent-green)]">About Akshar Exports</span>
               <h2 className="section-title text-3xl md:text-4xl lg:text-5xl font-medium mt-4 mb-6">
                 Leading with Integrity in Global Agro Markets
               </h2>
@@ -176,7 +210,7 @@ export default function AboutPage() {
         rounded-full
         bg-white p-1
       ">
-                      <Image src="/f1.png" alt="" fill className="rounded-full object-cover" />
+                      <Image src="/f1.png" alt="Handpicked quality peanuts" fill className="rounded-full object-cover" />
                     </div>
 
                     {/* Middle small */}
@@ -191,7 +225,7 @@ export default function AboutPage() {
         rounded-full
         bg-white p-1
       ">
-                      <Image src="/f2.png" alt="" fill className="rounded-full object-cover" />
+                      <Image src="/f2.png" alt="Premium sesame seeds" fill className="rounded-full object-cover" />
                     </div>
 
                     {/* Bottom small */}
@@ -205,7 +239,7 @@ export default function AboutPage() {
         rounded-full
         bg-white p-1
       ">
-                      <Image src="/f3.png" alt="" fill className="rounded-full object-cover" />
+                      <Image src="/f3.png" alt="Indian spices export" fill className="rounded-full object-cover" />
                     </div>
 
                   </div>
